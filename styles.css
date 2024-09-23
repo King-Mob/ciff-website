@@ -285,7 +285,7 @@ a:visited {
     transform: rotate(90deg);
   }
   50% {
-    top: 80vw;
+    top: 78vw;
     left: 85%;
     transform: rotate(135deg);
   }
@@ -296,7 +296,7 @@ a:visited {
     transform: rotate(180deg);
   }
   75% {
-    top: 80vw;
+    top: 78vw;
     left: 10%;
     transform: rotate(225deg);
   }
