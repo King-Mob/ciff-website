@@ -123,6 +123,7 @@ input {
   border: solid 1px black;
   white-space: nowrap;
   margin-left: 0.5rem;
+  text-decoration: none;
 }
 
 .ticket-button:hover,
@@ -205,6 +206,10 @@ input {
   }
 }
 
+#thank-you-text {
+  text-align: center;
+}
+
 .patrons-text {
   font-size: 1.25rem;
 }
@@ -212,7 +217,7 @@ input {
 #logos-container {
   display: grid;
   width: 100%;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   justify-items: center;
 }
 
