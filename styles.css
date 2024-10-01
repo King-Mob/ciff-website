@@ -178,6 +178,10 @@ input {
   margin: 0rem 0.5rem;
 }
 
+#instagram-link {
+  text-decoration: none;
+}
+
 #sign-up {
   margin-top: 0rem;
   text-align: center;
@@ -214,24 +218,31 @@ input {
   font-size: 1.25rem;
 }
 
-#logos-container {
-  display: grid;
+.logos-container {
+  display: flex;
   width: 100%;
-  grid-template-columns: auto auto auto;
-  justify-items: center;
+  justify-content: center;
+}
+
+.logos-container img {
+  width: 10rem;
+  height: fit-content;
+}
+
+#verge {
+  height: 6rem;
 }
 
 @media screen and (max-width: 700px) {
-  #logos-container {
-    grid-template-columns: auto auto;
+  .logos-container img {
+    width: 7rem;
+  }
+  #verge {
+    height: 4rem;
   }
   #omnibus {
     grid-column: 1 / span 2;
   }
-}
-
-#logos-container img {
-  width: 10rem;
 }
 
 .bottom-text {
