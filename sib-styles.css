@@ -1769,7 +1769,6 @@ http://nicolasgallagher.com/micro-clearfix-hack/
     bottom: 4px;
   }
   .sib-sms-select__title > .sib-sms-select__label-text {
-    display: inline-block;
     max-width: 70%;
     margin-left: 18px;
     padding-bottom: 5px;
