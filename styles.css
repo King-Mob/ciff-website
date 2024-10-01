@@ -32,6 +32,11 @@
   border-color: #fa70fa;
 }
 
+.siena {
+  background-color: #c9805f;
+  border-color: #c9805f;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -49,7 +54,9 @@ h1 {
 }
 
 p,
-h2 {
+h2,
+label,
+input {
   font-family: blurWebMedium;
 }
 
@@ -85,12 +92,17 @@ h2 {
   flex-direction: row;
   align-items: center;
   width: 30rem;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 700px) {
   .event-container {
     width: 95%;
   }
+}
+
+.event-line-two {
+  display: block;
 }
 
 .info-button {
@@ -103,7 +115,8 @@ h2 {
   display: none;
 }
 
-.ticket-button {
+.ticket-button,
+.ticket-button:visited {
   padding: 0.25rem;
   color: black;
   cursor: pointer;
@@ -170,7 +183,9 @@ h2 {
 }
 
 #slogan {
+  font-size: 3rem;
   text-align: center;
+  margin-top: 0rem;
 }
 
 #partners-container {
@@ -188,6 +203,21 @@ h2 {
   #partners-container {
     width: 95%;
   }
+}
+
+.patrons-text {
+  font-size: 1.25rem;
+}
+
+#logos-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  justify-items: center;
+}
+
+#logos-container img {
+  width: 10rem;
 }
 
 .bottom-text {
@@ -330,4 +360,54 @@ a:visited {
   display: block;
   image-rendering: pixelated;
   pointer-events: none;
+}
+
+/* Brevo form */
+
+.sib-form,
+.sib-form-container,
+.sib-container {
+  width: 30rem;
+}
+
+@media screen and (max-width: 700px) {
+  .sib-form,
+  .sib-form-container,
+  .sib-container {
+    width: 100%;
+  }
+}
+
+input {
+  width: 80%;
+}
+
+.sib-form-flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sib-form-block__button:hover {
+  opacity: 0.7;
+}
+
+#sib-container input:-ms-input-placeholder {
+  text-align: left;
+  color: #c0ccda;
+}
+
+#sib-container input::placeholder {
+  text-align: left;
+  color: #c0ccda;
+}
+
+#sib-container textarea::placeholder {
+  text-align: left;
+  color: #c0ccda;
+}
+
+#sib-container a {
+  text-decoration: underline;
+  color: #2bb2fc;
 }
