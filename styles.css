@@ -221,6 +221,15 @@ input {
   justify-items: center;
 }
 
+@media screen and (max-width: 700px) {
+  #logos-container {
+    grid-template-columns: auto auto;
+  }
+  #omnibus {
+    grid-column: 1 / span 2;
+  }
+}
+
 #logos-container img {
   width: 10rem;
 }
