@@ -210,13 +210,14 @@ input {
 
 .logos-container {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 30% 30% 30%;
   width: 100%;
   justify-items: center;
+  justify-content: center;
 }
 
 .logos-container img {
-  width: 10rem;
+  width: 8rem;
   height: fit-content;
 }
 
@@ -226,7 +227,7 @@ input {
 
 @media screen and (max-width: 700px) {
   .logos-container img {
-    width: 7rem;
+    width: 5rem;
   }
   #verge {
     height: 4rem;
