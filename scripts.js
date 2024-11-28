@@ -16,3 +16,23 @@ titleList.forEach((char, index) => {
     span.style.animationDuration = "20s";
     title.appendChild(span);
 })
+
+// turn on event passed text if event has passed
+
+const eventStamps = document.getElementsByClassName("event-passed");
+
+const now = new Date();
+
+for (const event of eventStamps) {
+    const eventDate = new Date(event.id.replace("event-passed-", ""));
+
+    if (now > eventDate) {
+        event.style.display = "block";
+        const button = event.previousElementSibling;
+        button.classList.add("ticket-button-down");
+    }
+}
+
+
+
+
