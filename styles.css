@@ -3,10 +3,16 @@
   src: url(BlurWeb-Medium_W03_Regular.ttf);
 }
 
+@font-face {
+  font-family: oldEnglishedBoots;
+  src: url(Old_Englished_Boots.ttf);
+}
+
 :root {
-  --main-title: #9aa998;
-  --moving-title: #525a51;
-  --orange: #e9994e;
+  --main-title: #000357;
+  --plain-text: #000c69;
+  --background: #f4f4f4;
+  --grid: #bcbcbc3b;
   --left-edge: 0rem;
   --right-edge: 25rem;
   --bottom-edge: 26rem;
@@ -42,8 +48,9 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  background-image: linear-gradient(to right, #80808012 3px, transparent 1px),
-    linear-gradient(to bottom, #80808012 3px, transparent 1px);
+  background-image: linear-gradient(to right, var(--grid) 2px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 2px, transparent 1px);
+  background-color: var(--background);
   background-size: 24px 24px;
 }
 
@@ -51,6 +58,12 @@ h1 {
   font-family: blurWebMedium;
   color: var(--main-title);
   width: fit-content;
+  text-align: center;
+}
+
+p {
+  margin: 0.5rem 1rem;
+  color: var(--plain-text);
 }
 
 p,
@@ -58,11 +71,42 @@ h2,
 label,
 input {
   font-family: blurWebMedium;
+  text-align: center;
+}
+
+#name {
+  font-family: oldEnglishedBoots;
+  font-size: 4rem;
+}
+
+#photos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.photo {
+  width: 60%;
+  border: 2px solid #101010;
+  background-color: #f4f4f4;
+  padding: 2% 2% 10% 2%;
+  cursor: pointer;
+  margin-top: -72%;
+}
+
+#EMAIL {
+  background-color: var(--main-title);
+  color: var(--background);
+  border: none;
 }
 
 #date {
   margin-top: 3rem;
+  margin-bottom: 0rem;
   text-align: center;
+  max-width: 800px;
 }
 
 #full-pass {
@@ -265,7 +309,7 @@ a:visited {
 }
 
 .title-character {
-  color: var(--moving-title);
+  color: var(--main-title);
   position: absolute;
   top: 0;
   left: 0;
