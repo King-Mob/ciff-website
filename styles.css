@@ -1,6 +1,6 @@
 @font-face {
-    font-family: blurWebMedium;
-    src: url(BlurWeb-Medium_W03_Regular.ttf);
+    font-family: RonzinoMedium;
+    src: url(Ronzino-Medium.woff2);
 }
 
 @font-face {
@@ -16,6 +16,7 @@
     --left-edge: 0rem;
     --right-edge: 25rem;
     --bottom-edge: 26rem;
+    --orbit-item-width: 200px;
 }
 
 .red {
@@ -55,7 +56,7 @@ body {
 }
 
 h1 {
-    font-family: blurWebMedium;
+    font-family: RonzinoMedium;
     color: var(--main-title);
     width: fit-content;
     text-align: center;
@@ -70,7 +71,7 @@ p,
 h2,
 label,
 input {
-    font-family: blurWebMedium;
+    font-family: RonzinoMedium;
     text-align: center;
 }
 
@@ -84,11 +85,12 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20rem;
+    overflow-x: hidden;
+    height: 550px;
 }
 
 .orbit-item {
-    width: fit-content;
+    width: var(--orbit-item-width);
     margin: 0;
     margin-bottom: -5rem;
     height: 5rem;
@@ -96,6 +98,14 @@ input {
     opacity: 0.75;
     cursor: pointer;
     animation: orbit 10s infinite linear;
+}
+
+.orbit-link {
+    text-decoration: none;
+}
+
+.orbit-image {
+    width: 100%;
 }
 
 .orbit-item:hover,
@@ -110,9 +120,15 @@ input {
 @keyframes orbit {
     0% {
         transform: rotate(0deg) translate(0rem, 15rem) rotate(0deg);
+        width: var(--orbit-item-width);
+    }
+    50% {
+        transform: rotate(180deg) translate(0rem, 5rem) rotate(-180deg);
+        width: 50px;
     }
     100% {
         transform: rotate(360deg) translate(0rem, 15rem) rotate(-360deg);
+        width: var(--orbit-item-width);
     }
 }
 
@@ -120,13 +136,6 @@ input {
     background-color: var(--main-title);
     color: var(--background);
     border: none;
-}
-
-#date {
-    margin-top: 3rem;
-    margin-bottom: 0rem;
-    text-align: center;
-    max-width: 800px;
 }
 
 #full-pass {
@@ -504,4 +513,9 @@ input {
 #sib-container a {
     text-decoration: underline;
     color: #2bb2fc;
+}
+
+.event-image {
+    width: 100%;
+    max-width: 600px;
 }
