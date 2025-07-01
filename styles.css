@@ -86,7 +86,7 @@ input {
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
-    height: 550px;
+    height: 620px;
 }
 
 .orbit-item {
