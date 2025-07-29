@@ -65,6 +65,11 @@ body {
     margin: 10px;
 }
 
+#logo {
+    width: 50%;
+    margin-top: 20px;
+}
+
 h1 {
     font-family: RonzinoMedium;
     color: var(--main-title);
