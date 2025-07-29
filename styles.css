@@ -8,10 +8,15 @@
     src: url(Old_Englished_Boots.ttf);
 }
 
+@font-face {
+    font-family: BookmanOldStyle;
+    src: url(Bookman_Old_Style_Regular.tff);
+}
+
 :root {
     --main-title: #000357;
     --plain-text: #000c69;
-    --background: #f4f4f4;
+    --background: #ffffff;
     --grid: #bcbcbc3b;
     --left-edge: 0rem;
     --right-edge: 25rem;
@@ -49,10 +54,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
-    background-image: linear-gradient(to right, var(--grid) 2px, transparent 1px),
-        linear-gradient(to bottom, var(--grid) 2px, transparent 1px);
     background-color: var(--background);
-    background-size: 24px 24px;
 }
 
 h1 {
@@ -69,67 +71,40 @@ p {
 
 p,
 h2,
+h3,
 label,
 input {
     font-family: RonzinoMedium;
     text-align: center;
 }
 
+#globe {
+    height: 400px;
+    width: 100%;
+    max-width: 400px;
+    border: black 5px solid;
+    margin-top: 20px;
+}
+
+#posters {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    max-width: 700px;
+}
+
+.poster {
+    width: 95%;
+    margin: 2.5%;
+    border: 1px black solid;
+}
+
+#universe {
+    font-family: BookmanOldStyle;
+}
+
 #name {
     font-family: oldEnglishedBoots;
     font-size: 4rem;
-}
-
-#orbit-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    height: 620px;
-}
-
-.orbit-item {
-    width: var(--orbit-item-width);
-    margin: 0;
-    margin-bottom: -5rem;
-    height: 5rem;
-    font-size: 5rem;
-    opacity: 0.75;
-    cursor: pointer;
-    animation: orbit 10s infinite linear;
-}
-
-.orbit-link {
-    text-decoration: none;
-}
-
-.orbit-image {
-    width: 100%;
-}
-
-.orbit-item:hover,
-.orbit-item:active {
-    opacity: 1;
-}
-
-#first-orbit {
-    margin-top: -15rem;
-}
-
-@keyframes orbit {
-    0% {
-        transform: rotate(0deg) translate(0rem, 15rem) rotate(0deg);
-        width: var(--orbit-item-width);
-    }
-    50% {
-        transform: rotate(180deg) translate(0rem, 5rem) rotate(-180deg);
-        width: 50px;
-    }
-    100% {
-        transform: rotate(360deg) translate(0rem, 15rem) rotate(-360deg);
-        width: var(--orbit-item-width);
-    }
 }
 
 #EMAIL {
