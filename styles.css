@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: BookmanOldStyle;
-    src: url(Bookman_Old_Style_Regular.tff);
+    src: url(Bookman_Old_Style_Regular.ttf);
 }
 
 :root {
-    --main-title: #000357;
-    --plain-text: #000c69;
+    --main-title: #000000;
+    --plain-text: #000000;
     --background: #ffffff;
     --grid: #bcbcbc3b;
     --left-edge: 0rem;
@@ -57,6 +57,14 @@ body {
     background-color: var(--background);
 }
 
+#border {
+    border: black 3px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
 h1 {
     font-family: RonzinoMedium;
     color: var(--main-title);
@@ -82,8 +90,31 @@ input {
     height: 400px;
     width: 100%;
     max-width: 400px;
-    border: black 5px solid;
     margin-top: 20px;
+    background-color: lightgrey;
+}
+
+#globe-caption {
+    text-decoration: underline;
+}
+
+#globe-caption span {
+    font-style: italic;
+    margin-right: 5px;
+}
+
+button {
+    border: solid 3px black;
+    margin: 5px;
+    background-color: white;
+    cursor: pointer;
+    padding: 5px 0px;
+    width: 230px;
+    font-family: RonzinoMedium;
+}
+
+button:active {
+    background-color: lightgrey;
 }
 
 #posters {
