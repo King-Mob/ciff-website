@@ -65,9 +65,13 @@ body {
     margin: 10px;
 }
 
+#title-image {
+    max-width: 700px;
+    width: 100%;
+}
+
 #logo {
-    width: 50%;
-    margin-top: 20px;
+    width: 33%;
 }
 
 h1 {
@@ -92,11 +96,9 @@ input {
 }
 
 #globe {
-    height: 400px;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     margin-top: 20px;
-    background-color: lightgrey;
 }
 
 #globe-caption {
