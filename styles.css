@@ -103,18 +103,10 @@ input {
     margin-top: 20px;
     position: relative;
     z-index: 1;
-    transform: rotate(-30deg);
 }
 
 #globe-caption {
     text-decoration: underline;
-    margin-top: -50px;
-}
-
-@media screen and (min-width: 450px) {
-    #globe-caption {
-        margin-top: -20px;
-    }
 }
 
 #globe-caption span {
@@ -170,27 +162,13 @@ button:active {
     display: flex;
     width: 100%;
     max-width: 500px;
-    height: 400px;
     flex-direction: column;
     align-items: center;
-    transform: rotate(30deg);
-}
-
-@media screen and (min-width: 375px) {
-    #globe-animation {
-        margin-bottom: 10vw;
-    }
-}
-
-@media screen and (min-width: 500px) {
-    #globe-animation {
-        margin-bottom: 80px;
-    }
+    margin-bottom: 30px;
 }
 
 .universe {
     margin: 0px;
-    transform: rotate3d(1, 0, 0, 42deg);
     font-family: BookmanOldStyle;
     text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff;
 }
