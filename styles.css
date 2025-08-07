@@ -613,3 +613,8 @@ input {
     width: 100%;
     max-width: 600px;
 }
+
+#instagram {
+    margin-top: 15px;
+    width: 50px;
+}
