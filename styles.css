@@ -55,6 +55,7 @@ body {
     align-items: center;
     margin: 0;
     background-color: var(--background);
+    cursor: url("eye_of_ciff.png"), auto;
 }
 
 #border {
@@ -153,6 +154,7 @@ button:active {
 }
 
 #posters {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: auto auto auto;
     max-width: 700px;
