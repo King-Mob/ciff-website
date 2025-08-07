@@ -616,5 +616,6 @@ input {
 
 #instagram {
     margin-top: 15px;
-    width: 50px;
+    width: 33px;
+    filter: saturate(0);
 }
