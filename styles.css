@@ -193,7 +193,6 @@ button:active {
     transform: rotate3d(1, 0, 0, 42deg);
     font-family: BookmanOldStyle;
     text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff;
-    height: 30px;
 }
 
 .universe-container {
