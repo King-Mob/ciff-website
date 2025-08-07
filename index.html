@@ -22,8 +22,7 @@
             </div>
 
             <script>
-                //const orbitText = "the centre of the universe starts now";
-                const orbitText = "thecentreoftheuniversestartsnow";
+                const orbitText = "the centre of the universe is now";
                 const animationContainer = document.getElementById("globe-animation");
                 let offset = 0;
                 for (let char of orbitText.split("")) {
@@ -34,7 +33,7 @@
                     const container = document.createElement("div");
                     container.classList.add("universe-container");
                     container.append(letter);
-                    container.style.animationDelay = `${(offset - 30) / 3}s`;
+                    container.style.animationDelay = `${(offset - 30) * 0.42}s`;
                     container.style.top = `${-200 - offset * 30}px`;
                     offset++;
                     animationContainer.append(container);

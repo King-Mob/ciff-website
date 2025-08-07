@@ -102,10 +102,18 @@ input {
     margin-top: 20px;
     position: relative;
     z-index: 1;
+    transform: rotate(-30deg);
 }
 
 #globe-caption {
     text-decoration: underline;
+    margin-top: -50px;
+}
+
+@media screen and (min-width: 450px) {
+    #globe-caption {
+        margin-top: -20px;
+    }
 }
 
 #globe-caption span {
@@ -146,6 +154,19 @@ button:active {
     height: 400px;
     flex-direction: column;
     align-items: center;
+    transform: rotate(30deg);
+}
+
+@media screen and (min-width: 375px) {
+    #globe-animation {
+        margin-bottom: 10vw;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    #globe-animation {
+        margin-bottom: 80px;
+    }
 }
 
 .universe {
@@ -153,6 +174,7 @@ button:active {
     transform: rotate3d(1, 0, 0, 42deg);
     font-family: BookmanOldStyle;
     text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #ffffff;
+    height: 30px;
 }
 
 .universe-container {
@@ -161,13 +183,12 @@ button:active {
     z-index: 2;
     width: 30px;
     height: 30px;
-
-    animation: saturn 13s infinite linear;
+    animation: saturn 15s infinite linear;
 }
 
 @keyframes saturn {
     0% {
-        left: -45%;
+        left: -55%;
         z-index: 0;
         font-size: 20px;
         transform: rotate3d(0, 0, 1, 90deg);
@@ -179,13 +200,13 @@ button:active {
         transform: rotate3d(0, 0, 1, 180deg);
     }
     49% {
-        left: 45%;
+        left: 55%;
         z-index: 0;
         font-size: 20px;
         transform: rotate3d(0, 0, 1, 270deg);
     }
     50% {
-        left: 45%;
+        left: 55%;
         z-index: 2;
         font-size: 20px;
         transform: rotate3d(0, 0, 1, 270deg);
@@ -197,7 +218,7 @@ button:active {
         transform: rotate3d(0, 0, 1, 360deg);
     }
     100% {
-        left: -45%;
+        left: -55%;
         z-index: 2;
         font-size: 20px;
         transform: rotate3d(0, 0, 1, 450deg);
