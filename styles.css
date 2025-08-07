@@ -135,6 +135,23 @@ button:active {
     background-color: lightgrey;
 }
 
+.button-style-link {
+    border: solid 3px black;
+    margin: 5px;
+    background-color: white;
+    cursor: pointer;
+    padding: 5px 0px;
+    width: 230px;
+    font-family: RonzinoMedium;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-style-link:active {
+    background-color: lightgrey;
+}
+
 #posters {
     display: grid;
     grid-template-columns: auto auto auto;
