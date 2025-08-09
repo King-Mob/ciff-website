@@ -1,0 +1,22 @@
+{
+    "title": "Horror films",
+    "date": "15/09/25",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/35mm_movie_negative.jpg",
+    "description": "it's a very scary night of films",
+    "link": "https://en.wikipedia.org",
+    "films": [
+        {
+            "title": "Baja Vacation Scary",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/35mm_movie_negative.jpg",
+            "synopsis": "When Shaun Williams booked a vacation to scary mexico, he didn't know it was going to be this terrifying!",
+            "director": "Louis Moped"
+        },
+        {
+            "title": "Dance scary Baby",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/0/02/35mm_movie_negative.jpg",
+            "synopsis": "Nobody said this baby can't dance scarily, because it can! A scary thrilled night of dancing",
+            "director": "Christopher Jenko"
+        }
+    ],
+    "runtime": 96
+}
