@@ -227,9 +227,8 @@ button:active {
 }
 
 #EMAIL {
-    background-color: var(--main-title);
-    color: var(--background);
-    border: none;
+    border: 2px black solid;
+    font-size: 16px;
 }
 
 #full-pass {
@@ -616,6 +615,7 @@ input {
 
 #instagram {
     margin-top: 15px;
+    margin-bottom: 10px;
     width: 33px;
     filter: saturate(0);
 }
