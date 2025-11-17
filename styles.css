@@ -1,7 +1,8 @@
 :root {
   --main-title: #000000;
   --plain-text: #000000;
-  --background: #ffffff;
+  --background: rgba(255, 255, 255, 0.3);
+  --background-strong: rgba(255, 255, 255, 0.6);
   --grid: #bcbcbc3b;
   --left-edge: 0rem;
   --right-edge: 25rem;
@@ -16,6 +17,35 @@ body {
   align-items: center;
   margin: 0;
   background-color: var(--background);
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  background-color: var(--background-strong);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid;
+  z-index: 1;
+  background-color: var(--background);
+}
+
+#parade {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  user-select: none;
+  overflow: hidden;
+  height: 600px;
+  z-index: 0;
 }
 
 .sib-form-flex {
