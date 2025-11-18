@@ -33,9 +33,19 @@ a {
   align-items: center;
   width: 100%;
   max-width: 600px;
-  border: 1px solid;
   z-index: 1;
   background-color: var(--background);
+}
+
+#title {
+  margin-bottom: 250px;
+}
+
+#submit-button {
+  background: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border: 2px black solid;
 }
 
 #parade {
@@ -44,8 +54,20 @@ a {
   max-width: 600px;
   user-select: none;
   overflow: hidden;
-  height: 600px;
+
   z-index: 0;
+  overflow-wrap: break-word;
+  contain: layout;
+}
+
+.parade-item {
+  display: inline-flex;
+  justify-content: center;
+  width: 20px;
+}
+
+.inverted {
+  filter: invert();
 }
 
 .sib-form-flex {
