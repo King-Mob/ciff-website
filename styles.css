@@ -17,6 +17,9 @@ body {
   align-items: center;
   margin: 0;
   background-color: var(--background);
+  overflow: hidden;
+  width: 100%;
+  height: 800px;
 }
 
 h1,
@@ -24,7 +27,7 @@ h2,
 h3,
 p,
 a {
-  background-color: var(--background-strong);
+  /* background-color: var(--background-strong);*/
 }
 
 #container {
@@ -34,7 +37,7 @@ a {
   width: 100%;
   max-width: 600px;
   z-index: 1;
-  background-color: var(--background);
+  /* background-color: var(--background);*/
 }
 
 #title {
@@ -42,32 +45,70 @@ a {
 }
 
 #submit-button {
-  background: white;
+  background: none;
+  backdrop-filter: invert();
   padding: 1rem 2rem;
+  width: 150px;
   cursor: pointer;
-  border: 2px black solid;
+  border: none;
+}
+
+#anti-button {
+  margin-top: 308px;
+  display: block;
+  width: 150px;
+  height: 62px;
+  backdrop-filter: invert();
 }
 
 #parade {
+  top: 0px;
+  left: 300px;
   position: absolute;
-  width: 100%;
+  width: 200%;
   max-width: 600px;
+  height: 1000px;
   user-select: none;
   overflow: hidden;
-
+  animation: background-drift 10s infinite linear;
   z-index: 0;
   overflow-wrap: break-word;
   contain: layout;
+  background-image: url(emojis.png);
+  background-repeat: no-repeat;
+}
+
+@keyframes background-drift {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -200px -200px;
+  }
 }
 
 .parade-item {
   display: inline-flex;
   justify-content: center;
   width: 20px;
+  height: 25px;
+}
+
+#invert-container {
+  left: 530px;
+  position: absolute;
+}
+
+#anti-invert-container {
+  z-index: -1;
+  position: absolute;
 }
 
 .inverted {
-  filter: invert();
+  position: absolute;
+  backdrop-filter: invert();
+  height: 25px;
+  width: 20px;
 }
 
 .sib-form-flex {

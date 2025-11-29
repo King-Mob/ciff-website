@@ -7,9 +7,9 @@ const container = document.getElementById("container");
 const maxCols = Math.floor(window.innerWidth / 20);
 const maxRows = Math.floor(container.offsetHeight / 20);
 
-const col = maxCols > 30 ? 30 : maxCols;
+const col = 2 * (maxCols > 30 ? 30 : maxCols);
 const offset = maxCols > 30 ? 0 : Math.floor((30 - maxCols) / 2);
-const row = maxRows - 2;
+const row = 2 * (maxRows - 2);
 
 const repeat = 50;
 let emojis = [];
@@ -31,44 +31,32 @@ const invertedSpans = [
   [8, 15], [8, 23], [8, 24],
   [9, 6], [9, 7], [9, 13], [9, 14],
   [9, 15], [9, 16], [9, 22], [9, 23],
-  [10, 6], [10, 8], [10, 12], [10, 13],
-  [10, 16], [10, 17], [10, 22], [10, 22],
+  [10, 7], [10, 8], [10, 12], [10, 13],
+  [10, 16], [10, 17], [10, 21], [10, 22],
   [11, 8], [11, 9], [11, 10], [11, 11],
   [11, 18], [11, 19], [11, 20], [11, 21],
 ];
 
+const invertContainer = document.getElementById("invert-container");
+
+function createInverts(invert, container) {
+  const span = document.createElement("span");
+  span.classList.add("inverted");
+  span.style.top = `${25 * (invert[0] - 1)}px`;
+  span.style.left = `${-230 + 20 * invert[1]}px`;
+  container.append(span);
+}
+
+invertedSpans.forEach(invert => {
+  createInverts(invert, invertContainer)
+})
+
+const antiInvertContainer = document.getElementById("anti-invert-container");
+
+invertedSpans.forEach(invert => {
+  createInverts(invert, antiInvertContainer)
+})
+
 const paradeSpans = [];
 const parade = document.getElementById("parade");
 
-for (let i = 0; i < row; i++) {
-  for (let j = 0; j < col; j++) {
-    const newSpan = document.createElement("span");
-    newSpan.id = `span-${i}-${j}`;
-    newSpan.classList.add("parade-item");
-    if (invertedSpans.find(item => item[0] === i && (item[1] - offset) === j)) {
-      newSpan.classList.add("inverted")
-    }
-    newSpan.innerHTML = emojis[(j + (i * j)) % emojis.length];
-    paradeSpans.push(newSpan);
-    parade.append(newSpan);
-  }
-}
-
-let delay = 100;
-let count = 0;
-
-function advance() {
-  const emojiOrder = emojis.slice(count).concat(emojis.slice(0, count));
-
-  paradeSpans.forEach((span, i) => {
-    span.innerHTML = emojiOrder[i % emojiOrder.length]
-  })
-
-  count++;
-  if (count > emojis.length)
-    count = 0;
-
-  setTimeout(advance, delay);
-}
-
-advance();
