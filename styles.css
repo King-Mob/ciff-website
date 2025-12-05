@@ -75,7 +75,7 @@ a {
   overflow-wrap: break-word;
   contain: layout;
   background-image: url(emojis.png);
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 
 @keyframes background-drift {
