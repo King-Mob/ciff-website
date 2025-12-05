@@ -26,8 +26,13 @@ h1,
 h2,
 h3,
 p,
-a {
+a,
+button {
   /* background-color: var(--background-strong);*/
+  /*backdrop-filter: invert(); */
+  color: white;
+  -webkit-text-stroke: 1px black;
+  font-size: 32px;
 }
 
 #container {
@@ -48,7 +53,7 @@ a {
   background: none;
   backdrop-filter: invert();
   padding: 1rem 2rem;
-  width: 150px;
+  width: 250px;
   cursor: pointer;
   border: none;
 }
@@ -56,21 +61,19 @@ a {
 #anti-button {
   margin-top: 308px;
   display: block;
-  width: 150px;
-  height: 62px;
+  width: 250px;
+  height: 106px;
   backdrop-filter: invert();
 }
 
 #parade {
   top: 0px;
-  left: 300px;
   position: absolute;
   width: 200%;
-  max-width: 600px;
   height: 1000px;
   user-select: none;
   overflow: hidden;
-  animation: background-drift 10s infinite linear;
+  animation: background-drift 30s infinite linear;
   z-index: 0;
   overflow-wrap: break-word;
   contain: layout;
@@ -83,7 +86,7 @@ a {
     background-position: 0px 0px;
   }
   to {
-    background-position: -200px -200px;
+    background-position: -1102px -1058px;
   }
 }
 
@@ -95,13 +98,18 @@ a {
 }
 
 #invert-container {
-  left: 530px;
+  width: 400px;
   position: absolute;
 }
 
 #anti-invert-container {
+  width: 400px;
+  display: flex;
+  width: 400px;
   z-index: -1;
   position: absolute;
+  flex-direction: column;
+  align-items: center;
 }
 
 .inverted {
@@ -145,5 +153,5 @@ a {
   margin-top: 15px;
   margin-bottom: 10px;
   width: 33px;
-  filter: saturate(0);
+  filter: invert();
 }

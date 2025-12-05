@@ -43,7 +43,7 @@ function createInverts(invert, container) {
   const span = document.createElement("span");
   span.classList.add("inverted");
   span.style.top = `${25 * (invert[0] - 1)}px`;
-  span.style.left = `${-230 + 20 * invert[1]}px`;
+  span.style.left = `${-100 + 20 * invert[1]}px`;
   container.append(span);
 }
 
