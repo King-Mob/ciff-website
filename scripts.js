@@ -43,7 +43,7 @@ function createInverts(invert, container) {
   const span = document.createElement("span");
   span.classList.add("inverted");
   span.style.top = `${25 * (invert[0] - 1)}px`;
-  span.style.left = `${-100 + 20 * invert[1]}px`;
+  span.style.left = `${-83 + 18 * invert[1]}px`;
   container.append(span);
 }
 
@@ -60,3 +60,16 @@ invertedSpans.forEach(invert => {
 const paradeSpans = [];
 const parade = document.getElementById("parade");
 
+parade.style.height = container.offsetHeight + "px";
+container.style.minHeight = "100%";
+
+const submitButton = document.getElementById("submit-button");
+const emailButton = document.getElementById("email-button");
+const antiSubmitButton = document.getElementById("anti-button");
+const antiEmailButton = document.getElementById("anti-email-button");
+
+let submitLocation = submitButton.getBoundingClientRect();
+let emailLocation = emailButton.getBoundingClientRect();
+
+antiSubmitButton.style.top = submitLocation.top;
+antiEmailButton.style.top = emailLocation.top;
