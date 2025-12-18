@@ -39,22 +39,22 @@ const invertedSpans = [
 
 const invertContainer = document.getElementById("invert-container");
 
-function createInverts(invert, container) {
+function createInverts(style, invert, container) {
   const span = document.createElement("span");
-  span.classList.add("inverted");
+  span.classList.add(style);
   span.style.top = `${25 * (invert[0] - 1)}px`;
   span.style.left = `${-83 + 18 * invert[1]}px`;
   container.append(span);
 }
 
 invertedSpans.forEach(invert => {
-  createInverts(invert, invertContainer)
+  createInverts("inverted", invert, invertContainer)
 })
 
 const antiInvertContainer = document.getElementById("anti-invert-container");
 
 invertedSpans.forEach(invert => {
-  createInverts(invert, antiInvertContainer)
+  createInverts("anti-inverted", invert, antiInvertContainer)
 })
 
 const paradeSpans = [];

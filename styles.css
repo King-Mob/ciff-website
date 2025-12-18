@@ -75,7 +75,7 @@ button {
   display: block;
   width: 250px;
   height: 96px;
-  backdrop-filter: invert();
+  background-color: black;
 }
 
 #anti-email-button {
@@ -85,7 +85,7 @@ button {
   display: block;
   width: 258px;
   height: 40px;
-  backdrop-filter: invert();
+  background-color: black;
 }
 
 #parade {
@@ -133,6 +133,13 @@ button {
   position: absolute;
   flex-direction: column;
   align-items: center;
+}
+
+.anti-inverted {
+  position: absolute;
+  background-color: black;
+  height: 25px;
+  width: 18px;
 }
 
 .inverted {
