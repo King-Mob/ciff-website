@@ -100,7 +100,7 @@ button {
   z-index: 0;
   overflow-wrap: break-word;
   contain: layout;
-  background-image: url(eye\ of\ ciff.png);
+  background-image: url(eye_of_ciff_small.png);
   background-repeat: repeat;
 }
 
@@ -109,7 +109,7 @@ button {
     background-position: 0px 0px;
   }
   to {
-    background-position: -1102px -1058px;
+    background-position: -492px -432px;
   }
 }
 
