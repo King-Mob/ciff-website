@@ -84,7 +84,7 @@ button {
 }
 
 #anti-email-button {
-  margin-left: -1px;
+  margin-left: 0px;
   position: absolute;
   top: 508px;
   display: block;
