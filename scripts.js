@@ -61,6 +61,10 @@ const paradeSpans = [];
 const parade = document.getElementById("parade");
 
 parade.style.height = container.offsetHeight + "px";
+
+const backgroundContainer = document.getElementById("background-container");
+
+backgroundContainer.style.height = container.offsetHeight + "px";
 container.style.minHeight = "100%";
 
 const submitButton = document.getElementById("submit-button");

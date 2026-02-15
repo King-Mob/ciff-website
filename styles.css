@@ -88,7 +88,7 @@ button {
   position: absolute;
   top: 508px;
   display: block;
-  width: 239px;
+  width: 240px;
   height: 40px;
   background-color: black;
 }
@@ -100,11 +100,11 @@ button {
   min-height: 100%;
   user-select: none;
   overflow: hidden;
-  animation: background-drift 30s infinite linear;
+  /* animation: background-drift 30s infinite linear;*/
   z-index: 0;
   overflow-wrap: break-word;
   contain: layout;
-  background-image: url(eye_of_ciff_small.png);
+  /*background-image: url(eye_of_ciff_small.png);*/
   background-repeat: repeat;
 }
 
@@ -128,6 +128,7 @@ button {
   width: 100%;
   max-width: 400px;
   position: absolute;
+  z-index: 2;
 }
 
 #anti-invert-container {
@@ -200,4 +201,35 @@ h3 {
 #bottom-text {
   margin-bottom: 5px;
   font-size: 20px;
+}
+
+#background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+#background {
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  margin-top: -1000px;
+  margin-left: -1000px;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  animation: rotate-in-place 90s infinite linear;
+  overflow: hidden;
+}
+
+@keyframes rotate-in-place {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
