@@ -113,7 +113,7 @@ a {
   margin-top: 15px;
   margin-bottom: 10px;
   width: 33px;
-  filter: saturate(0);
+  filter: saturate(2) hue-rotate(302deg);
 }
 
 h3 {
