@@ -1,7 +1,7 @@
 :root {
   --main-title: #000000;
   --plain-text: #000000;
-  --background: rgb(255, 255, 255);
+  --background: #ffffff81;
   --background-strong: rgba(255, 255, 255, 0.6);
   --ciff-blue: #283b79;
   --grid: #bcbcbc3b;
@@ -45,7 +45,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   box-shadow: var(--ciff-blue) 15px 15px;
-  background-color: white;
+  background-color: var(--background);
   max-width: 600px;
   width: 90%;
   z-index: 1;
