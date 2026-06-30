@@ -14,16 +14,27 @@
     <img src="eye background white.jpg" id="background" />
 
     <div id="container">
-
         <h2 id="slogan">
             The Clapham International Film Festival is an international film festival that takes place in Clapham.
-            <br /><br />
-            The 5th edition will happen during September 2026. <br /><br />
-            Submissions are currently open, and plans are afoot.</h2>
+        </h2>
+        <section class="draw-section">  
+            <h2>Draw something</h2>   
+            <div class="draw-toolbar">  
+                <input type="color" id="colorPicker" value="#222222" aria-label="Pen color">
+                  <button id="clearBtn" type="button">Clear</button>
+              </div> 
+            <div class="canvas-wrap">
+                <canvas id="drawCanvas"></canvas>
+            </div> 
+            <button id="analyzeBtn" class="analyze-btn" type="button">Analyse my drawing</button> 
+            <div id="resultBox" class="result-box" hidden>  
+                <p id="resultText"></p> 
+            </div>
+        </section> 
+        <script src="scripts.js"></script>
 
         <div id="button-container"> <a href="https://filmfreeway.com/ciffuk"><button id="submit-button">SUBMIT
                     FILM</button></a>
-
             <a href="mailto:knock@ciff.uk"></a><button id="enquiries-button">ENQUIRIES</button></a>
         </div>
 
