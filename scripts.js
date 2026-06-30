@@ -31,6 +31,7 @@
     const height = parent.clientHeight;
     const dpr = window.devicePixelRatio || 1;
 
+    
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     /*
