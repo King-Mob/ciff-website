@@ -1,9 +1,9 @@
 :root {
   --main-title: #000000;
   --plain-text: #000000;
-  --background: #ffffff81;
+  --background: rgba(255, 255, 255, 0.3);
   --background-strong: rgba(255, 255, 255, 0.6);
-  --ciff-blue: #283b79;
+  --ciff-blue: #0000ff;
   --grid: #bcbcbc3b;
   --left-edge: 0rem;
   --right-edge: 25rem;
@@ -13,8 +13,13 @@
 }
 
 @font-face {
-  font-family: "Karrik";
-  src: url("./Karrik-Regular.ttf");
+  font-family: "Rotunda";
+  src: url("./rotunda.otf");
+}
+
+@font-face {
+  font-family: "Bianzhidai";
+  src: url("./bianzhidai.otf");
 }
 
 body {
@@ -22,15 +27,112 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  background-color: var(--background);
+  /*background-color: var(--background);*/
   width: 100%;
   height: 100%;
   font-family: "Karrik";
   color: var(--ciff-blue);
+  z-index: 0;
+}
+
+#grain {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.1; /* tune by eye against the reference */
+  pointer-events: none;
+}
+
+.noise {
+  background: url(./noise.svg);
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
+  font-family: "Bianzhidai";
+  color: #0000ff;
+  font-weight: normal;
+}
+
+#looking-down {
+  position: absolute;
+  top: -100px;
+  right: -223px;
+  width: 746px;
+  opacity: 0.08;
+  z-index: -2;
+}
+
+#eye-of-ciff {
+  filter: saturate(10);
+  height: 100px;
+  width: 120px;
+  margin-left: 20%;
+}
+
+#title-container {
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 25px;
+}
+
+#title-container h1 {
+  margin: 0;
+  font-stretch: ultra-condensed; /* narrows the glyphs, if the font supports it */
+  letter-spacing: 0.2em;
+}
+
+#date-bar {
+  background: url("./noise.svg");
+  background-size: cover;
+  width: 100%;
+  padding: 5px;
+  position: relative;
+}
+
+#date-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("noise.svg");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  filter: saturate(3);
+  z-index: -1;
+}
+
+#date-bar h2 {
+  color: white;
+  font-family: "Bianzhidai";
+  font-weight: normal;
+  margin: 0;
+  margin-right: 20px;
+  text-align: right;
+  font-size: 16px;
+  font-stretch: ultra-condensed; /* narrows the glyphs, if the font supports it */
+  letter-spacing: 0.05em;
+}
+
+#is-it-you {
+  font-family: "Rotunda";
+  letter-spacing: 0.1em;
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+p {
+  font-family: "Rotunda";
+  text-align: center;
+}
+
+.fancy-word {
+  font-family: "Bianzhidai";
 }
 
 #slogan {
