@@ -172,6 +172,16 @@ main {
   align-items: center;
 }
 
+#main-grain {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 #is-it-you {
   font-family: "Rotunda";
   letter-spacing: 0.1em;
@@ -349,16 +359,6 @@ h3 {
 
 #new-horizon {
   color: white;
-}
-
-#main-grain {
-  position: relative;
-  width: 100%;
-  z-index: -1;
-  inset: 0;
-  mix-blend-mode: soft-light;
-  opacity: 0.4;
-  pointer-events: none;
 }
 
 footer {

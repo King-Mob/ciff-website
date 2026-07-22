@@ -217,16 +217,6 @@
             </div>
         </section>
         <div id="main-grain" class="noise"></div>
-        <script>
-            const mainContent = document.getElementById("main-content");
-            const mainGrain = document.getElementById("main-grain");
-
-            console.log(mainContent.getBoundingClientRect())
-
-            mainGrain.style.height = `${mainContent.getBoundingClientRect().height}px`;
-            mainGrain.style.marginTop = `-${mainContent.getBoundingClientRect().height}px`;
-
-        </script>
     </main>
 
     <div id="date-bar">
