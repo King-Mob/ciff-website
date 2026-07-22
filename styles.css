@@ -291,8 +291,12 @@ h3 {
 }
 
 #film-strip-container {
-  height: 500px;
+  height: 400px;
   overflow-y: scroll;
+}
+
+#film-strip-container img {
+  width: 300px;
 }
 
 .scrollable {
