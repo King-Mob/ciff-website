@@ -44,6 +44,7 @@ const manifest = {
     'rabbit-left.png': [400, true],
     'rabbit-right.png': [400, true],
     'samba-infinito.png': [500],
+    'script.png': [100, true],
     'they-come-out.png': [500]
 };
 // ----------------------------------------------------------------

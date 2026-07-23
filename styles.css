@@ -284,7 +284,7 @@ h3 {
 }
 
 #communion {
-  margin: 80px 0px;
+  margin: 30px 0px 50px 0px;
 }
 
 #film-strip-container {
@@ -439,6 +439,14 @@ footer {
 #eye-of-ciff-bottom {
   width: 120px;
   margin-left: 40%;
+}
+
+/* Mobile styles */
+
+@media screen and (max-width: 600px) {
+  #big-words h1 {
+    font-size: 40px;
+  }
 }
 
 /* old styles  */
