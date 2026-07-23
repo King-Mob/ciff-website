@@ -10,7 +10,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SOURCE_DIR = './';
-const OUTPUT_DIR = './';
+const OUTPUT_DIR = './resize';
 const QUALITY = 85; // JPEG/WebP quality, ignored for PNG (uses compressionLevel below)
 
 // --- Edit this manifest: filename -> target width in pixels ---

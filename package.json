@@ -1,0 +1,24 @@
+{
+  "name": "ciff-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "resize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/King-Mob/ciff-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/King-Mob/ciff-website/issues"
+  },
+  "homepage": "https://github.com/King-Mob/ciff-website#readme",
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}
