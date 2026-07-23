@@ -68,7 +68,7 @@ h1 {
 
 #rabbit-right {
   position: absolute;
-  top: 500px;
+  top: 700px;
   right: -195px;
   height: 500px;
   opacity: 0.2;
@@ -77,7 +77,7 @@ h1 {
 
 #rabbit-left {
   position: absolute;
-  top: 871px;
+  top: 1100px;
   left: -150px;
   height: 500px;
   opacity: 0.2;
@@ -86,11 +86,15 @@ h1 {
 
 #looking-up {
   position: absolute;
-  top: 1765px;
+  top: 2600px;
   left: -223px;
   width: 746px;
   opacity: 0.2;
   z-index: -2;
+}
+
+.hand {
+  width: 100px;
 }
 
 #eye-of-ciff {
@@ -289,6 +293,10 @@ h3 {
   line-height: 1.4;
 }
 
+#communion {
+  margin: 80px 0px;
+}
+
 #film-strip-container {
   height: 400px;
   overflow-y: scroll;
@@ -326,6 +334,8 @@ h3 {
   text-align: center;
   font-size: 40px;
   cursor: pointer;
+  text-decoration: none;
+  margin-top: 80px;
 }
 
 #entry a {
@@ -335,6 +345,7 @@ h3 {
 #links-container {
   align-self: end;
   margin-right: 100px;
+  margin-top: 80px;
 }
 
 #links-container a {
@@ -352,6 +363,7 @@ h3 {
 
 #big-words {
   overflow: hidden;
+  margin-top: 200px;
 }
 
 #big-words h1 {
