@@ -443,9 +443,14 @@ footer {
 
 /* Mobile styles */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   #big-words h1 {
     font-size: 40px;
+  }
+
+  #looking-up {
+    width: 400px;
+    left: -130px;
   }
 }
 

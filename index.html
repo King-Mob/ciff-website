@@ -345,9 +345,11 @@
         const parallaxEls = document.querySelectorAll('.parallax');
 
         function updateParallax() {
-            const scrollY = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollY = Math.min(window.scrollY, maxScroll);
+
             parallaxEls.forEach(el => {
-                const speed = parseFloat(el.dataset.speed) || 0.5; // 0.5 = half scroll speed
+                const speed = parseFloat(el.dataset.speed) || 0.5;
                 el.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
             });
             requestAnimationFrame(updateParallax);
