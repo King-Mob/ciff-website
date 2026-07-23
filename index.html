@@ -48,10 +48,12 @@
 <body>
     <div id="grain" class="noise"></div>
 
-    <img src="./looking-down.jpg" id="looking-down" alt="ghostly eyes looking down">
-    <img src="./rabbit-right.webp" id="rabbit-right" alt="ghostly white rabbit film award">
-    <img src="./rabbit-left.webp" id="rabbit-left" alt="ghostly white rabbit film award">
-    <img src="./looking-up.webp" id="looking-up" alt="ghostly eyes looking up">
+    <img src="./looking-down.jpg" id="looking-down" class="parallax" data-speed="0.6" alt="ghostly eyes looking down">
+    <img src="./rabbit-right.webp" id="rabbit-right" class="parallax" data-speed="0.6"
+        alt="ghostly white rabbit film award">
+    <img src="./rabbit-left.webp" id="rabbit-left" class="parallax" data-speed="0.6"
+        alt="ghostly white rabbit film award">
+    <img src="./looking-up.webp" id="looking-up" class="parallax" data-speed="0.6" alt="ghostly eyes looking up">
 
     <div id="title-container">
         <img src="./eye of ciff.png" alt="hand drawn eye" id="eye-of-ciff">
@@ -327,6 +329,29 @@
             2023</a>, <a href="./2022/index.html">
             2022</a>
     </p>
+
+    <!-- Parallax feature -->
+    <script>
+        const parallaxEls = document.querySelectorAll('.parallax');
+
+        function updateParallax() {
+            const scrollY = window.scrollY;
+            parallaxEls.forEach(el => {
+                const speed = parseFloat(el.dataset.speed) || 0.5; // 0.5 = half scroll speed
+                el.style.transform = `translateY(${scrollY * speed}px)`;
+            });
+        }
+
+        window.addEventListener('scroll', updateParallax, { passive: true });
+
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => { updateParallax(); ticking = false; });
+                ticking = true;
+            }
+        }, { passive: true });
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-647B936PMZ"></script>
