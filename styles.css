@@ -320,16 +320,41 @@ h3 {
 }
 
 #entry {
-  font-family: "Rotunda";
+  font-family: "Bianzhidai";
   text-align: center;
-  font-size: 40px;
+  font-size: 20px;
   cursor: pointer;
   text-decoration: none;
-  margin-top: 80px;
+  margin-top: 120px;
+  color: white;
+  background: url("./noise.svg");
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  width: 230px;
+  height: 25px;
+  letter-spacing: 0.1em;
+}
+
+#entry::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("noise.svg");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  filter: saturate(3);
+  z-index: -1;
+}
+
+#entry-spaces {
+  display: block;
+  margin-top: -25px;
 }
 
 #entry a {
   text-decoration: none;
+  color: white;
 }
 
 #links-container {
