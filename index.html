@@ -321,6 +321,7 @@
             <img src="./eye of ciff.png" alt="hand drawn eye" id="eye-of-ciff-bottom">
         </div>
 
+        <div id="footer-grain" class="noise"></div>
     </footer>
 
     <p id="previous" style="display: none;">
@@ -339,19 +340,12 @@
             const scrollY = window.scrollY;
             parallaxEls.forEach(el => {
                 const speed = parseFloat(el.dataset.speed) || 0.5; // 0.5 = half scroll speed
-                el.style.transform = `translateY(${scrollY * speed}px)`;
+                el.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
             });
+            requestAnimationFrame(updateParallax);
         }
 
-        window.addEventListener('scroll', updateParallax, { passive: true });
-
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => { updateParallax(); ticking = false; });
-                ticking = true;
-            }
-        }, { passive: true });
+        requestAnimationFrame(updateParallax);
     </script>
 
     <!-- Google tag (gtag.js) -->

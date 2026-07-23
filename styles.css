@@ -367,10 +367,26 @@ h3 {
 }
 
 footer {
+  position: relative;
+  overflow-y: hidden;
+  height: 350px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 82, 250, 0.6),
+    rgba(0, 60, 250, 0.6)
+  );
+}
+
+#footer-grain {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+  z-index: -1;
 }
 
 #credit {
