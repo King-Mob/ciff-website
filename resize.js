@@ -1,5 +1,5 @@
 // resize.js
-// Run with: npx -y -p sharp node resize.js
+// Run with: node resize.js
 //
 // Resizes each image listed in `manifest` to its target width,
 // preserving aspect ratio, and writes results to ./resize/
@@ -28,7 +28,7 @@ const manifest = {
     'describe.png': [100, true],
     'film-strip.png': [400],
     'finetune.png': [100, true],
-    'frame.png': [175, true],
+    'frame.png': [250, true],
     'laurel.png': [100, true],
     'looking-down.png': [800],
     'looking-up.png': [800, true],
