@@ -142,13 +142,31 @@ h1 {
   color: white;
   font-family: "Bianzhidai";
   font-weight: normal;
-  text-align: right;
   font-size: 16px;
-  font-stretch: ultra-condensed; /* narrows the glyphs, if the font supports it */
+  font-stretch: ultra-condensed;
   letter-spacing: 0.05em;
   margin: 0;
   text-wrap: nowrap;
-  float: right;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+#date-bar a {
+  color: white;
+  flex: 0 0 auto;
+}
+
+#date-bar span {
+  flex: 0 0 auto;
+}
+
+#date-bar #responsive-space {
+  flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow: hidden;
+  min-width: 0;
 }
 
 main {
@@ -460,7 +478,14 @@ footer {
     margin-left: 0%;
   }
 
-  #date-bar span {
+  #date-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #date-bar span,
+  #date-bar a {
     display: none;
   }
 
