@@ -35,6 +35,7 @@ const manifest = {
     'laurel.png': [100, true],
     'looking-down.png': [800],
     'looking-up.png': [800, true],
+    'map.png': [800, true],
     'picture-house.png': [500, true],
     'pint-of-bitter.png': [500],
     'polaroid1.png': [500, true],

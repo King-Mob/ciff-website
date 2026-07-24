@@ -131,6 +131,19 @@
             "coldharbour-blue": "coldharbour-blue.webp"
         };
 
+        function preloadImages(sources) {
+            sources.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        preloadImages([
+            "map.jpg",
+            "eye-of-ciff.png",
+            ...Object.values(locationImages),
+        ]);
+
         function openModal(id) {
             document.getElementById(id).classList.add("open");
         }
