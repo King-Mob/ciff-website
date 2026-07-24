@@ -71,7 +71,7 @@
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <a>SHOP</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a href="#" id="map-trigger">MAP</a>
+            <a href="#" class="map-trigger">MAP</a>
             <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -152,10 +152,16 @@
             document.getElementById(id).classList.remove("open");
         }
 
-        document.getElementById("map-trigger").addEventListener("click", (e) => {
-            e.preventDefault();
-            openModal("map-modal");
-        });
+        console.log(document.getElementsByClassName("map-trigger"))
+
+        const mapTriggers = document.getElementsByClassName("map-trigger");
+
+        for (const link of mapTriggers) {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                openModal("map-modal");
+            })
+        }
 
         document.querySelectorAll(".modal-close").forEach((btn) => {
             btn.addEventListener("click", () => closeModal(btn.dataset.close));
@@ -371,7 +377,7 @@
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <a>SHOP</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a href="#" id="map-trigger">MAP</a>
+            <a class="map-trigger">MAP</a>
             <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
