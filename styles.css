@@ -222,6 +222,25 @@ h1 {
   height: 50px;
   transform: translate(-50%, -50%);
   cursor: pointer;
+  animation: poi-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes poi-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.6));
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poi {
+    animation: none;
+  }
 }
 
 .modal-content {
