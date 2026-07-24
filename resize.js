@@ -24,6 +24,9 @@ const QUALITY = 85; // JPEG/WebP quality
 const manifest = {
     'action.png': [100, true],
     'aproove.png': [100, true],
+    'central-film-school.png': [500, true],
+    'cinema-museum.png': [500, true],
+    'coldharbour-blue.png': [500, true],
     'dancing-pigeons.png': [500],
     'describe.png': [100, true],
     'film-strip.png': [400],
@@ -32,6 +35,7 @@ const manifest = {
     'laurel.png': [100, true],
     'looking-down.png': [800],
     'looking-up.png': [800, true],
+    'picture-house.png': [500, true],
     'pint-of-bitter.png': [500],
     'polaroid1.png': [500, true],
     'polaroid2.png': [500, true],

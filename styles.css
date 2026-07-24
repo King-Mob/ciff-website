@@ -169,6 +169,78 @@ h1 {
   min-width: 0;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: -12px;
+  right: -4px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  color: blue;
+  font-family: "Rotunda";
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.map-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.map-img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.poi {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.modal-content {
+  background: white;
+  padding: 15px;
+}
+
+#location-modal-img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+#location-modal-caption {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 16px;
+}
+
 main {
   position: relative;
   width: 100%;

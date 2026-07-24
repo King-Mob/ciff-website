@@ -65,13 +65,13 @@
     <div id="date-bar">
         <h2>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a>TICKETS</a>
+            <a href="https://ciff26.eventive.org">TICKETS</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a>PROGRAMME</a>
+            <a href="https://ciff26.eventive.org">PROGRAMME</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <a>SHOP</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a>MAP</a>
+            <a href="#" id="map-trigger">MAP</a>
             <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -86,6 +86,76 @@
             &nbsp;&nbsp;&nbsp;&nbsp;
         </h2>
     </div>
+
+    <!-- Map Modal -->
+    <div class="modal" id="map-modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="map-modal">x</button>
+            <div class="map-wrap">
+                <img src="./map.jpg" alt="Festival map" class="map-img">
+                <img src="./eye of ciff.png" class="poi" style="left: 12.5%; top: 86.5%;" data-location="picture-house"
+                    alt="Clapham Picturehouse">
+                <img src="./eye of ciff.png" class="poi" style="left: 30%; top: 78.5%;"
+                    data-location="central-film-school" alt="Central Film School">
+                <img src="./eye of ciff.png" class="poi" style="left: 70%; top: 13%;" data-location="cinema-museum"
+                    alt="The Cinema Museum">
+                <img src="./eye of ciff.png" class="poi" style="left: 73.5%; top: 81.5%;"
+                    data-location="coldharbour-blue" alt="Coldharbour Blue">
+                <!-- add more .poi img elements as needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Modal -->
+    <div class="modal" id="location-modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="location-modal">x</button>
+            <img id="location-modal-img" src="" alt="">
+            <p id="location-modal-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        const locationImages = {
+            "picture-house": "picture-house.webp",
+            "central-film-school": "central-film-school.webp",
+            "cinema-museum": "cinema-museum.webp",
+            "coldharbour-blue": "coldharbour-blue.webp"
+        };
+
+        function openModal(id) {
+            document.getElementById(id).classList.add("open");
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove("open");
+        }
+
+        document.getElementById("map-trigger").addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal("map-modal");
+        });
+
+        document.querySelectorAll(".modal-close").forEach((btn) => {
+            btn.addEventListener("click", () => closeModal(btn.dataset.close));
+        });
+
+        document.querySelectorAll(".poi").forEach((poi) => {
+            poi.addEventListener("click", () => {
+                const key = poi.dataset.location;
+                const src = locationImages[key];
+                if (!src) return;
+
+                const img = document.getElementById("location-modal-img");
+                img.src = src;
+                img.alt = poi.alt;
+
+                document.getElementById("location-modal-caption").textContent = poi.alt;
+
+                openModal("location-modal");
+            });
+        });
+    </script>
 
     <main>
         <section id="main-content">
