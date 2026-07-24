@@ -501,6 +501,27 @@ footer {
     margin-top: -200px;
   }
 
+  #film-carousel button {
+    display: none;
+  }
+
+  .track {
+    padding: 0px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+    scroll-snap-type: x proximity; /* optional, nice snap-to-card feel */
+  }
+
+  /* Show every card, not just .is-visible ones */
+  .card,
+  .card.is-visible {
+    display: flex !important;
+    flex: 0 0 85%; /* or whatever width feels right per card on mobile */
+    scroll-snap-align: start; /* optional, pairs with scroll-snap-type above */
+    max-width: 200px;
+  }
+
   #links-container {
     align-self: center;
     margin-right: 0px;
