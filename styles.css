@@ -381,6 +381,7 @@ h3 {
 .track {
   flex: 1;
   display: flex;
+  justify-content: center;
   gap: 16px;
   overflow: hidden;
 }
@@ -390,7 +391,7 @@ h3 {
   flex-direction: column;
   flex: 1 1 0;
   min-width: 0;
-  max-width: 150px;
+  max-width: 200px;
   overflow: hidden;
 }
 .card.is-visible {
@@ -665,6 +666,7 @@ footer {
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
     scroll-snap-type: x proximity; /* optional, nice snap-to-card feel */
+    justify-content: start;
   }
 
   /* Show every card, not just .is-visible ones */
@@ -673,6 +675,7 @@ footer {
     display: flex !important;
     flex: 0 0 85%; /* or whatever width feels right per card on mobile */
     scroll-snap-align: start; /* optional, pairs with scroll-snap-type above */
+    max-width: 150px;
   }
 
   #links-container {
