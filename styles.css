@@ -465,11 +465,10 @@ h3 {
   text-decoration: none;
   margin-top: 120px;
   color: white;
-  background: url("./noise.svg");
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 3px;
   position: relative;
-  height: 25px;
   letter-spacing: 0.1em;
 }
 
