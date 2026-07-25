@@ -677,11 +677,6 @@ footer {
     scroll-snap-align: start; /* optional, pairs with scroll-snap-type above */
   }
 
-  .card-title,
-  .card-caption {
-    display: none;
-  }
-
   #links-container {
     align-self: center;
     margin-right: 0px;
