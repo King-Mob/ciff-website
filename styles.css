@@ -644,6 +644,10 @@ footer {
     top: 1500px;
   }
 
+  .fancy-word {
+    font-weight: bold;
+  }
+
   p {
     max-width: 250px;
   }
