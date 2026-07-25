@@ -68,10 +68,10 @@
             <a href="https://ciff26.eventive.org">TICKETS</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <a href="https://ciff26.eventive.org">PROGRAMME</a>
+            <span style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a style="display: none;">SHOP</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a>SHOP</a>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a href="#" class="map-trigger">MAP</a>
+            <a class="map-trigger">MAP</a>
             <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -95,97 +95,16 @@
         </h2>
     </div>
 
-    <!-- Map Modal -->
-    <div class="modal" id="map-modal">
-        <div class="modal-content">
-            <button class="modal-close" data-close="map-modal">x</button>
-            <div class="map-wrap">
-                <img src="./map.webp" alt="Festival map" class="map-img">
-                <img src="./eye of ciff.png" class="poi" style="left: 12.5%; top: 86.5%;" data-location="picture-house"
-                    alt="Clapham Picturehouse">
-                <img src="./eye of ciff.png" class="poi" style="left: 30%; top: 78.5%;"
-                    data-location="central-film-school" alt="Central Film School">
-                <img src="./eye of ciff.png" class="poi" style="left: 70%; top: 13%;" data-location="cinema-museum"
-                    alt="The Cinema Museum">
-                <img src="./eye of ciff.png" class="poi" style="left: 73.5%; top: 81.5%;"
-                    data-location="coldharbour-blue" alt="Coldharbour Blue">
-                <!-- add more .poi img elements as needed -->
-            </div>
-        </div>
-    </div>
-
-    <!-- Location Modal -->
-    <div class="modal" id="location-modal">
-        <div class="modal-content">
-            <button class="modal-close" data-close="location-modal">x</button>
-            <img id="location-modal-img" src="" alt="">
-            <p id="location-modal-caption"></p>
-        </div>
-    </div>
-
-    <script>
-        const locationImages = {
-            "picture-house": "picture-house.webp",
-            "central-film-school": "central-film-school.webp",
-            "cinema-museum": "cinema-museum.webp",
-            "coldharbour-blue": "coldharbour-blue.webp"
-        };
-
-        function preloadImages(sources) {
-            sources.forEach((src) => {
-                const img = new Image();
-                img.src = src;
-            });
-        }
-
-        preloadImages([
-            "map.webp",
-            "eye-of-ciff.png",
-            ...Object.values(locationImages),
-        ]);
-
-        function openModal(id) {
-            document.getElementById(id).classList.add("open");
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove("open");
-        }
-
-        console.log(document.getElementsByClassName("map-trigger"))
-
-        const mapTriggers = document.getElementsByClassName("map-trigger");
-
-        for (const link of mapTriggers) {
-            link.addEventListener("click", (e) => {
-                e.preventDefault();
-                openModal("map-modal");
-            })
-        }
-
-        document.querySelectorAll(".modal-close").forEach((btn) => {
-            btn.addEventListener("click", () => closeModal(btn.dataset.close));
-        });
-
-        document.querySelectorAll(".poi").forEach((poi) => {
-            poi.addEventListener("click", () => {
-                const key = poi.dataset.location;
-                const src = locationImages[key];
-                if (!src) return;
-
-                const img = document.getElementById("location-modal-img");
-                img.src = src;
-                img.alt = poi.alt;
-
-                document.getElementById("location-modal-caption").textContent = poi.alt;
-
-                openModal("location-modal");
-            });
-        });
-    </script>
 
     <main>
         <section id="main-content">
+            <h1 class="entry" id="entry-top">
+                <a href="https://ciff26.eventive.org">
+                    TICKETS</a>
+                <span
+                    id="entry-spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </h1>
+
             <h1 id="is-it-you">Is it You?</h1>
 
             <p>We would like to <span class="fancy-word">welcome</span> you like an old <span
@@ -241,36 +160,36 @@
 
                 <div class="track" id="track">
                     <div class="card"><img src="dancing-pigeons.jpg">
-                        <h3>Item 1</h3>
-                        <p>Description for item one.</p>
+                        <h3 class="card-title">Item 1</h3>
+                        <p class="card-caption">Description for item one.</p>
                     </div>
                     <div class="card"><img src="pint-of-bitter.jpg">
-                        <h3>Item 2</h3>
-                        <p>Description for item two.</p>
+                        <h3 class="card-title">Item 2</h3>
+                        <p class="card-caption">Description for item two.</p>
                     </div>
                     <div class="card"><img src="samba-infinito.jpg">
-                        <h3>Item 3</h3>
-                        <p>Description for item three.</p>
+                        <h3 class="card-title">Item 3</h3>
+                        <p class="card-caption">Description for item three.</p>
                     </div>
                     <div class="card"><img src="they-come-out.jpg">
-                        <h3>Item 4</h3>
-                        <p>Description for item four.</p>
+                        <h3 class="card-title">Item 4</h3>
+                        <p class="card-caption">Description for item four.</p>
                     </div>
                     <div class="card"><img src="film-poster-mock.png">
-                        <h3>Item 5</h3>
-                        <p>Description for item five.</p>
+                        <h3 class="card-title">Item 5</h3>
+                        <p class="card-caption">Description for item five.</p>
                     </div>
                     <div class="card"><img src="film-poster-mock.png">
-                        <h3>Item 6</h3>
-                        <p>Description for item six.</p>
+                        <h3 class="card-title">Item 6</h3>
+                        <p class="card-caption">Description for item six.</p>
                     </div>
                     <div class="card"><img src="film-poster-mock.png">
-                        <h3>Item 7</h3>
-                        <p>Description for item seven.</p>
+                        <h3 class="card-title">Item 7</h3>
+                        <p class="card-caption">Description for item seven.</p>
                     </div>
                     <div class="card"><img src="film-poster-mock.png">
-                        <h3>Item 8</h3>
-                        <p>Description for item eight.</p>
+                        <h3 class="card-title">Item 8</h3>
+                        <p class="card-caption">Description for item eight.</p>
                     </div>
                 </div>
 
@@ -281,7 +200,7 @@
             <script>
                 const track = document.getElementById('track');
                 const cards = Array.from(track.children);
-                const VISIBLE = 4;
+                const VISIBLE = 5;
                 let start = 0; // index of the leftmost visible card
 
                 function render() {
@@ -306,7 +225,7 @@
                 render();
             </script>
 
-            <img src="./frame.webp" alt="two hands facing palmwards framing something">
+            <img id="frame-hands" src="./frame.webp" alt="two hands facing palmwards framing something">
 
             <p id="communion">a communion of <span class="fancy-word">character</span> <br>and <span
                     class="fancy-word">vision</span>
@@ -321,7 +240,7 @@
             </div>
 
 
-            <h1 id="entry">
+            <h1 id="entry-bottom" class="entry">
                 <a href="https://ciff26.eventive.org">
                     TICKETS</a>
                 <span
@@ -329,8 +248,7 @@
             </h1>
 
             <a href="https://ciff26.eventive.org"></a>
-            <img src="./action.webp" class="hand"
-                style="width: 100px; margin-top: -70px; cursor: pointer; transform: translateX(120px);">
+            <img src="./action.webp" class="hand" style="width: 100px; margin-top: 40px; cursor: pointer;">
             </a>
 
             <div id="links-container">
@@ -347,7 +265,7 @@
                 <a href="mailto:knock@ciff.uk">
                     <p>knock@ciff.uk</p>
                 </a>
-                <a href="https://instagram.com/ciff.uk">
+                <a style="display: none;">
                     <p>shop</p>
                 </a>
                 <img src="./script.webp" alt="hands holding a page of paper" style="margin-left:60px;">
@@ -374,8 +292,8 @@
             <a href="https://ciff26.eventive.org">TICKETS</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <a href="https://ciff26.eventive.org">PROGRAMME</a>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <a>SHOP</a>
+            <span style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a style="display: none;">SHOP</a>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
             <a class="map-trigger">MAP</a>
             <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -400,6 +318,93 @@
             &nbsp;&nbsp;&nbsp;&nbsp;
         </h2>
     </div>
+
+    <!-- Map Modal -->
+    <div class="modal" id="map-modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="map-modal">x</button>
+            <div class="map-wrap">
+                <img src="./map.webp" alt="Festival map" class="map-img">
+                <img src="./eye of ciff.png" class="poi" style="left: 12.5%; top: 86.5%;" data-location="picture-house"
+                    alt="Clapham Picturehouse">
+                <img src="./eye of ciff.png" class="poi" style="left: 30%; top: 78.5%;"
+                    data-location="central-film-school" alt="Central Film School">
+                <img src="./eye of ciff.png" class="poi" style="left: 70%; top: 13%;" data-location="cinema-museum"
+                    alt="The Cinema Museum">
+                <img src="./eye of ciff.png" class="poi" style="left: 73.5%; top: 81.5%;"
+                    data-location="coldharbour-blue" alt="Coldharbour Blue">
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Modal -->
+    <div class="modal" id="location-modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="location-modal">x</button>
+            <img id="location-modal-img" src="" alt="">
+            <p id="location-modal-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        const locationImages = {
+            "picture-house": "picture-house.webp",
+            "central-film-school": "central-film-school.webp",
+            "cinema-museum": "cinema-museum.webp",
+            "coldharbour-blue": "coldharbour-blue.webp"
+        };
+
+        function preloadImages(sources) {
+            sources.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        preloadImages([
+            "map.webp",
+            "eye-of-ciff.png",
+            ...Object.values(locationImages),
+        ]);
+
+        function openModal(id) {
+            document.getElementById(id).classList.add("open");
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove("open");
+        }
+
+        const mapTriggers = document.getElementsByClassName("map-trigger");
+
+        for (const link of mapTriggers) {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                openModal("map-modal");
+            })
+        }
+
+        document.querySelectorAll(".modal-close").forEach((btn) => {
+            btn.addEventListener("click", () => closeModal(btn.dataset.close));
+        });
+
+        document.querySelectorAll(".poi").forEach((poi) => {
+            poi.addEventListener("click", () => {
+                const key = poi.dataset.location;
+                const src = locationImages[key];
+                if (!src) return;
+
+                const img = document.getElementById("location-modal-img");
+                img.src = src;
+                img.alt = poi.alt;
+
+                document.getElementById("location-modal-caption").textContent = poi.alt;
+
+                openModal("location-modal");
+            });
+        });
+    </script>
+
 
     <footer>
 

@@ -169,6 +169,14 @@ h1 {
   min-width: 0;
 }
 
+.map-trigger {
+  cursor: pointer;
+}
+
+#entry-top {
+  display: none;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -362,6 +370,14 @@ h3 {
   transform: scale(0.94);
 }
 
+#backBtn {
+  margin-right: 40px;
+}
+
+#forwardBtn {
+  margin-left: 40px;
+}
+
 .track {
   flex: 1;
   display: flex;
@@ -374,6 +390,7 @@ h3 {
   flex-direction: column;
   flex: 1 1 0;
   min-width: 0;
+  max-width: 150px;
   overflow: hidden;
 }
 .card.is-visible {
@@ -381,9 +398,11 @@ h3 {
 }
 
 .card img {
-  height: 100%;
+  /*
+   height: 70%;
   object-fit: cover;
   background: #ece7da;
+  */
 }
 .card h3 {
   margin: 12px 12px 4px;
@@ -394,6 +413,11 @@ h3 {
   font-size: 13px;
   color: #6b6558;
   line-height: 1.4;
+}
+
+#frame-hands {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 #communion {
@@ -413,6 +437,7 @@ h3 {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  /*
   mask-image: linear-gradient(
     to bottom,
     transparent,
@@ -426,13 +451,13 @@ h3 {
     black 120px,
     black calc(100% - 120px),
     transparent
-  );
+  );*/
 }
 .scrollable::-webkit-scrollbar {
   display: none;
 }
 
-#entry {
+.map-img {
   font-family: "Bianzhidai";
   text-align: center;
   font-size: 20px;
@@ -449,7 +474,13 @@ h3 {
   letter-spacing: 0.1em;
 }
 
-#entry::before {
+.entry {
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.entry::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -461,11 +492,11 @@ h3 {
 }
 
 #entry-spaces {
-  display: block;
+  display: none;
   margin-top: -25px;
 }
 
-#entry a {
+.entry a {
   text-decoration: none;
   color: white;
 }
@@ -480,6 +511,7 @@ h3 {
   display: block;
   text-decoration: none;
   overflow: hidden;
+  color: white;
 }
 
 #links-container p {
@@ -557,6 +589,10 @@ footer {
 /* Mobile styles */
 
 @media screen and (max-width: 700px) {
+  #title-container h1 {
+    font-size: 20px;
+  }
+
   #big-words {
     margin-top: 20px;
   }
@@ -583,6 +619,10 @@ footer {
   #date-bar h2 {
     text-align: center;
     float: none;
+  }
+
+  #entry-top {
+    display: block;
   }
 
   #looking-down {
@@ -635,7 +675,11 @@ footer {
     display: flex !important;
     flex: 0 0 85%; /* or whatever width feels right per card on mobile */
     scroll-snap-align: start; /* optional, pairs with scroll-snap-type above */
-    max-width: 200px;
+  }
+
+  .card-title,
+  .card-caption {
+    display: none;
   }
 
   #links-container {
