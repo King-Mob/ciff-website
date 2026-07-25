@@ -24,18 +24,25 @@ const QUALITY = 85; // JPEG/WebP quality
 const manifest = {
     'action.png': [100, true],
     'aproove.png': [100, true],
+    'asparagus-dead.png': [500],
+    'big-city-pizza.png': [500],
     'central-film-school.png': [500, true],
     'cinema-museum.png': [500, true],
     'coldharbour-blue.png': [500, true],
     'dancing-pigeons.png': [500],
+    'david.png': [500],
     'describe.png': [100, true],
     'film-strip.png': [400],
     'finetune.png': [100, true],
     'frame.png': [250, true],
+    'kings-of-venice.png': [500],
+    'lamant-trouble.png': [500],
     'laurel.png': [100, true],
     'looking-down.png': [800],
     'looking-up.png': [800, true],
+    'looksmaxing.png': [500],
     'map.png': [800, true],
+    'omnipresentes.png': [500],
     'picture-house.png': [500, true],
     'pint-of-bitter.png': [500],
     'polaroid1.png': [500, true],
@@ -50,7 +57,10 @@ const manifest = {
     'rabbit-right.png': [400, true],
     'samba-infinito.png': [500],
     'script.png': [100, true],
-    'they-come-out.png': [500]
+    'teneriffa.png': [500],
+    'the-final-attunement.png': [500],
+    'they-come-out.png': [500],
+    'un-ciel-si-bas.png': [500]
 };
 // ----------------------------------------------------------------
 
