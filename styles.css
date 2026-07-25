@@ -457,7 +457,7 @@ h3 {
   display: none;
 }
 
-.map-img {
+.entry {
   font-family: "Bianzhidai";
   text-align: center;
   font-size: 20px;
@@ -469,7 +469,6 @@ h3 {
   padding-top: 10px;
   padding-bottom: 10px;
   position: relative;
-  width: 230px;
   height: 25px;
   letter-spacing: 0.1em;
 }
