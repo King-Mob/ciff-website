@@ -658,6 +658,10 @@ footer {
     display: block;
   }
 
+  #entry-bottom {
+    display: none;
+  }
+
   #looking-down {
     top: -88px;
     right: -114px;
