@@ -24,7 +24,7 @@ const QUALITY = 85; // JPEG/WebP quality
 const manifest = {
     'action.png': [100, true],
     'aproove.png': [100, true],
-    'asparagus-dead.png': [500],
+    'asparagus-dead.jpg': [500],
     'big-city-pizza.png': [500],
     'central-film-school.png': [500, true],
     'cinema-museum.png': [500, true],
@@ -60,6 +60,10 @@ const manifest = {
     'teneriffa.png': [500],
     'the-final-attunement.png': [500],
     'they-come-out.png': [500],
+    'ticket.png': [150, true],
+    'ticket-base.png': [150, true],
+    'ticket-left.png': [150, true],
+    'ticket-right.png': [150, true],
     'un-ciel-si-bas.png': [500]
 };
 // ----------------------------------------------------------------
