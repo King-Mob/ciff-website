@@ -486,7 +486,7 @@ h3 {
     transform: translate(-100%, -40%) scale(1);
   }
   50% {
-    transform: translate(-100%, -40%) scale(1.1);
+    transform: translate(-100%, -40%) scale(1.1) rotate(-5deg);
   }
 }
 
@@ -502,7 +502,7 @@ h3 {
     transform: translate(30%, 5%) scale(1);
   }
   50% {
-    transform: translate(30%, 5%) scale(1.1);
+    transform: translate(30%, 5%) scale(1.1) rotate(5deg);
   }
 }
 
