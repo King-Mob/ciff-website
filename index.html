@@ -4,6 +4,8 @@
     <title>CIFF</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width initial-scale=1 minimum-scale=1" />
+    <link rel="preload" href="./bianzhidai.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="./rotunda.otf" as="font" type="font/otf" crossorigin>
     <link rel="icon" href="eye of ciff.png" type="image/x-icon" />
     <link rel="stylesheet" href="./sib-styles.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -44,121 +46,414 @@
 </head>
 
 <body>
+    <div id="grain" class="noise"></div>
 
-    <img src="eye background white.jpg" id="background" />
+    <img src="./looking-down.jpg" id="looking-down" class="parallax" data-speed="0.6" alt="ghostly eyes looking down">
+    <img src="./rabbit-right.webp" id="rabbit-right" class="parallax" data-speed="0.6"
+        alt="ghostly white rabbit film award">
+    <img src="./rabbit-left.webp" id="rabbit-left" class="parallax" data-speed="0.6"
+        alt="ghostly white rabbit film award">
+    <img src="./looking-up.webp" id="looking-up" class="parallax" data-speed="0.6" alt="ghostly eyes looking up">
 
-    <div id="container">
+    <div id="title-container">
+        <img src="./eye of ciff.png" alt="hand drawn eye" id="eye-of-ciff">
+        <h1>CLAPHAM</h1>
+        <h1>INTERNATIONAL</h1>
+        <h1>FILM FESTIVAL</h1>
+    </div>
 
-        <h2 id="slogan">
-            The Clapham International Film Festival is an international film festival that takes place in Clapham.
-            <br /><br />
-            The 5th edition will happen during September 2026. <br /><br />
-            Submissions are currently open, and plans are afoot.</h2>
-
-        <div id="button-container"> <a href="https://filmfreeway.com/ciffuk"><button id="submit-button">SUBMIT
-                    FILM</button></a>
-
-            <a href="mailto:knock@ciff.uk"></a><button id="enquiries-button">ENQUIRIES</button></a>
-        </div>
-
-        <a href="https://instagram.com/ciff.uk"><img id="instagram" src="Instagram_icon.png" alt="instagram icon" /></a>
-
-        <div class="sib-form" style="text-align: center">
-            <div id="sib-form-container" class="sib-form-container">
-                <div id="error-message" class="sib-form-message-panel" style="
-                            font-size: 16px;
-                            text-align: left;
-                            color: #661d1d;
-                            background-color: #ffeded;
-                            border-radius: 3px;
-                            border-color: #ff4949;
-                            max-width: 350px;
-                        ">
-                    <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                            <path
-                                d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-                        </svg>
-                        <span class="sib-form-message-panel__inner-text">
-                            Your subscription could not be saved. Please try again.
-                        </span>
-                    </div>
-                </div>
-                <div></div>
-                <div id="success-message" class="sib-form-message-panel" style="color: #085229">
-                    <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                        <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                            <path
-                                d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-                        </svg>
-                        <span class="sib-form-message-panel__inner-text"> Thanks for signing up </span>
-                    </div>
-                </div>
-                <div></div>
-                <div id="sib-container" class="sib-container--medium sib-container--vertical"
-                    style="text-align: center; border-radius: 3px; direction: ltr">
-                    <form id="sib-form" method="POST"
-                        action="https://dd394846.sibforms.com/serve/MUIFAN3ZgDOTsIwZUDYDXqvX0qXHWkJAASqPFbXyyGh63757KqY_AhI44TFLK5wDiaQQKAPD1Jf7DpLFLgFO9vqr7xrcVC1W8rJa8dd1hpMvZdeXG7jplZGcqYZIqTqQzDmnJ1uaYgbhqqSkP2bAyLLxr0pAkkiYwmQyyFmxFLDl0puhbfv676Yn-bfVtD7prdZemfrvSJmUvffC"
-                        data-type="subscription">
-                        <div>
-                            <div class="sib-input sib-form-block">
-                                <div class="form__entry entry_block">
-                                    <div class="form__label-row">
-                                        <div class="entry__field">
-                                            <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off"
-                                                placeholder="EMAIL FOR NEWSLETTER" data-required="true" required />
-                                        </div>
-                                    </div>
-
-                                    <label class="entry__error entry__error--primary" style="
-                                                font-size: 16px;
-                                                text-align: left;
-                                                color: #661d1d;
-                                                background-color: #ffeded;
-                                                border-radius: 3px;
-                                                border-color: #ff4949;
-                                            "></label>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="sib-form-block sib-form-flex" style="text-align: left">
-                                <button id="email-button"
-                                    class="sib-form-block__button sib-form-block__button-with-loader" style="
-                                            text-align: center;
-                                            width: 240px;
-                                        " form="sib-form" type="submit">
-                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
-                                        viewBox="0 0 512 512">
-                                        <path
-                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                                    </svg>
-                                    SIGN UP FOR NEWS
-                                </button>
-                            </div>
-                        </div>
-
-                        <input type="text" name="email_address_check" value="" class="input--hidden" />
-                        <input type="hidden" name="locale" value="en" />
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <p id="previous">
-            <a href="./2025/index.html">
-                2025</a>, <a href="./2024/index.html">
-                2024</a>, <a href="./2023/index.html">
-                2023</a>, <a href="./2022/index.html">
-                2022</a>
-        </p>
-
-        <p id="bottom-text" style="border-top: 1px solid var(--main-title)">
-            © Clapham International Film Festival 2026
-        </p>
+    <div id="date-bar">
+        <h2>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a href="https://ciff26.eventive.org">TICKETS</a>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a href="https://ciff26.eventive.org/schedule">PROGRAMME</a>
+            <span style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a style="display: none;">SHOP</a>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a class="map-trigger">MAP</a>
+            <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            16-20 SEPTEMBER 2026
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </h2>
     </div>
 
 
+    <main>
+        <section id="main-content">
+
+            <div id="entry-top" class="entry">
+                <a href="https://ciff26.eventive.org">
+                    <img id="ticket-left" src="./ticket-left.webp">
+                    <img id="ticket" src="./ticket.webp" alt="a line drawing of a cinema ticket">
+                    <img id="ticket-right" src="./ticket-right.webp">
+                </a>
+            </div>
+
+            <h1 id="is-it-you">Is it You?</h1>
+
+            <p>We would like to <span class="fancy-word">welcome</span> you like an old <span
+                    class="fancy-word">friend</span>
+                <br /> to the festival of <span class="fancy-word">mental</span> entertainment
+            </p>
+
+            <img style="transform: rotate(45deg); margin: 40px 0px;" class="hand" src="./describe.webp"
+                alt="a hand waving in a cricle">
+
+            <div id="polaroids-container">
+                <img id="polaroid8" src="polaroid8.webp" onclick="resetPolaroids()" style="transform: rotate(0deg);">
+                <img class="polaroid-up" id="polaroid7" src="polaroid7.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(4deg);">
+                <img class="polaroid-up" id="polaroid6" src="polaroid6.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(10deg);">
+                <img class="polaroid-up" id="polaroid5" src="polaroid5.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(6deg);">
+                <img class="polaroid-up" id="polaroid4" src="polaroid4.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(3deg);">
+                <img class="polaroid-up" id="polaroid3" src="polaroid3.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(11deg);">
+                <img class="polaroid-up" id="polaroid2" src="polaroid2.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(6deg);">
+                <img class="polaroid-up" id="polaroid1" src="polaroid1.webp" onclick="this.style.display = 'none';"
+                    style="transform: rotate(0deg)">
+
+                <script>
+                    function resetPolaroids() {
+                        for (let i = 7; i >= 1; i--) {
+                            setTimeout(() => {
+                                document.getElementById('polaroid' + i).style.display = 'block';
+                            }, (7 - i) * 300);
+                        }
+                    }
+                </script>
+            </div>
+
+            <img class="hand" style="margin: 40px 0px;" src="finetune.webp"
+                alt="hand pinching in finger and thumb below">
+
+            <p style="margin-bottom: 80px;">
+                we sourced
+                <br> 32 peak <span class="fancy-word">films</span>
+                <br> from 16 <span class="fancy-word">far away lands</span>
+                <br> crafted by exceptional <span class="fancy-word">minds</span>
+            </p>
+
+            <div id="film-carousel">
+                <button class="nav-btn" id="backBtn" aria-label="Previous"><img class="hand"
+                        src="aproove.webp"></button>
+
+                <div class="track" id="track">
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f409f2b33ea397dd2ce98"><img
+                                src="kings-of-venice.jpg"></a>
+                    </div>
+                    <div class="card"><img src="un-ciel-si-bas.jpg">
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f430da05c7e7e46df5413"><img
+                                src="samba-infinito.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f40e80cf963f8f793623f"><img
+                                src="they-come-out.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f40ba37463f234de62c7d"><img
+                                src="big-city-pizza.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f44be5b043b49d1cd2346"><img
+                                src="pint-of-bitter.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f44719eaecd0570c292e4"><img
+                                src="the-final-attunement.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f40d25de1414a7879b65e"><img
+                                src="omnipresentes.jpg"></a>
+                    </div>
+                    <div class="card"><img src="asparagus-dead.jpg">
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f424db0a7996999499759"><img
+                                src="lamant-trouble.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f42d14210caafbdca9d2f"><img
+                                src="looksmaxing.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f43ef6a396673d66dadc2"><img
+                                src="teneriffa.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f411837463f234de64fa2"><img
+                                src="dancing-pigeons.jpg"></a>
+                    </div>
+                    <div class="card"><a href="https://ciff26.eventive.org/films/6a5f4296b0a7996999499b60"><img
+                                src="david.jpg"></a>
+                    </div>
+
+                </div>
+                <button class="nav-btn" id="forwardBtn" aria-label="Next"><img class="hand"
+                        src="./laurel.webp"></button>
+            </div>
+
+
+            <script>
+                const track = document.getElementById('track');
+                const cards = Array.from(track.children);
+                const VISIBLE = 4;
+                let start = 0; // index of the leftmost visible card
+
+                function render() {
+                    cards.forEach((card, i) => card.classList.remove('is-visible'));
+                    for (let n = 0; n < VISIBLE; n++) {
+                        const idx = (start + n) % cards.length;
+                        cards[idx].classList.add('is-visible');
+                        cards[idx].style.order = n; // keeps left-to-right order correct
+                    }
+                }
+
+                document.getElementById('forwardBtn').addEventListener('click', () => {
+                    start = (start + 1) % cards.length;
+                    render();
+                });
+
+                document.getElementById('backBtn').addEventListener('click', () => {
+                    start = (start - 1 + cards.length) % cards.length;
+                    render();
+                });
+
+                render();
+            </script>
+
+            <img id="frame-hands" src="./frame.webp" alt="two hands facing palmwards framing something">
+
+            <p id="communion">a communion of <span class="fancy-word">character</span> <br>and <span
+                    class="fancy-word">vision</span>
+                <br>
+                among illuminated dust <br>a <span class="fancy-word">dream</span> dreamt with eyes <span
+                    class="fancy-word">wide
+                    open</span>
+            </p>
+
+            <div id="film-strip-container" class="scrollable">
+                <img src="./film-strip.jpg">
+            </div>
+
+
+            <div id="entry-bottom" class="entry">
+                <a href="https://ciff26.eventive.org">
+                    <img id="ticket-left" src="./ticket-left.webp">
+                    <img id="ticket" src="./ticket.webp" alt="a line drawing of a cinema ticket">
+                    <img id="ticket-right" src="./ticket-right.webp">
+                </a>
+            </div>
+
+            <div id="links-container">
+                <a href="https://ciff26.eventive.org">
+                    <p>tickets</p>
+                </a>
+                <a
+                    href="https://dd394846.sibforms.com/serve/MUIFAN3ZgDOTsIwZUDYDXqvX0qXHWkJAASqPFbXyyGh63757KqY_AhI44TFLK5wDiaQQKAPD1Jf7DpLFLgFO9vqr7xrcVC1W8rJa8dd1hpMvZdeXG7jplZGcqYZIqTqQzDmnJ1uaYgbhqqSkP2bAyLLxr0pAkkiYwmQyyFmxFLDl0puhbfv676Yn-bfVtD7prdZemfrvSJmUvffC">
+                    <p>newsletter</p>
+                </a>
+                <a href="https://instagram.com/ciff.uk">
+                    <p>instagram</p>
+                </a>
+                <a href="https://letterboxd.com/ciffuk/">
+                    <p>letterboxd</p>
+                </a>
+                <a href="mailto:knock@ciff.uk">
+                    <p>knock@ciff.uk</p>
+                </a>
+                <a style="display: none;">
+                    <p>shop</p>
+                </a>
+            </div>
+
+            <div id="big-words">
+                <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P&nbsp;U&nbsp;R&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;O&nbsp;U&nbsp;R&nbsp;C&nbsp;E&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </h1>
+                <h1 id="new-horizon">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N&nbsp;E&nbsp;W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H&nbsp;O&nbsp;R&nbsp;I&nbsp;Z&nbsp;O&nbsp;N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </h1>
+            </div>
+        </section>
+        <div id="main-grain" class="noise"></div>
+    </main>
+
+    <div id="date-bar">
+        <h2>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a href="https://ciff26.eventive.org">TICKETS</a>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a href="https://ciff26.eventive.org">PROGRAMME</a>
+            <span style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a style="display: none;">SHOP</a>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <a class="map-trigger">MAP</a>
+            <span id="responsive-space">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            16-20 SEPTEMBER 2026
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </h2>
+    </div>
+
+    <!-- Map Modal -->
+    <div class="modal" id="map-modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="map-modal">x</button>
+            <div class="map-wrap">
+                <img src="./map.webp" alt="Festival map" class="map-img">
+                <img src="./eye of ciff.png" class="poi" style="left: 12.5%; top: 86.5%;" data-location="picture-house"
+                    alt="Clapham Picturehouse">
+                <img src="./eye of ciff.png" class="poi" style="left: 30%; top: 78.5%;"
+                    data-location="central-film-school" alt="Central Film School">
+                <img src="./eye of ciff.png" class="poi" style="left: 70%; top: 13%;" data-location="cinema-museum"
+                    alt="The Cinema Museum">
+                <img src="./eye of ciff.png" class="poi" style="left: 73.5%; top: 81.5%;"
+                    data-location="coldharbour-blue" alt="Coldharbour Blue">
+            </div>
+        </div>
+    </div>
+
+    <!-- Location Modal -->
+    <div class="modal" id="location-modal">
+        <div class="modal-content">
+            <button class="modal-close" data-close="location-modal">x</button>
+            <img id="location-modal-img" src="" alt="">
+            <p id="location-modal-caption"></p>
+        </div>
+    </div>
+
+    <script>
+        const locationImages = {
+            "picture-house": "picture-house.webp",
+            "central-film-school": "central-film-school.webp",
+            "cinema-museum": "cinema-museum.webp",
+            "coldharbour-blue": "coldharbour-blue.webp"
+        };
+
+        function preloadImages(sources) {
+            sources.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        }
+
+        preloadImages([
+            "map.webp",
+            "eye-of-ciff.png",
+            ...Object.values(locationImages),
+        ]);
+
+        function openModal(id) {
+            document.getElementById(id).classList.add("open");
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove("open");
+        }
+
+        const mapTriggers = document.getElementsByClassName("map-trigger");
+
+        for (const link of mapTriggers) {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                openModal("map-modal");
+            })
+        }
+
+        document.querySelectorAll(".modal-close").forEach((btn) => {
+            btn.addEventListener("click", () => closeModal(btn.dataset.close));
+        });
+
+        document.querySelectorAll(".poi").forEach((poi) => {
+            poi.addEventListener("click", () => {
+                const key = poi.dataset.location;
+                const src = locationImages[key];
+                if (!src) return;
+
+                const img = document.getElementById("location-modal-img");
+                img.src = src;
+                img.alt = poi.alt;
+
+                document.getElementById("location-modal-caption").textContent = poi.alt;
+
+                openModal("location-modal");
+            });
+        });
+    </script>
+
+
+    <footer>
+
+        <p id="credit">design by ciff.uk <br> website by <a href="https://john.spacetu.be">John Evans</a></p>
+
+        <div id="footer-container">
+            <h1>CLAPHAM<br>
+                INTERNATIONAL<br>
+                FILM FESTIVAL</h1>
+            <img src="./eye of ciff.png" alt="hand drawn eye" id="eye-of-ciff-bottom">
+        </div>
+
+        <div id="footer-grain" class="noise"></div>
+    </footer>
+
+    <p id="previous" style="display: none;">
+        <a href="./2025/index.html">
+            2025</a>, <a href="./2024/index.html">
+            2024</a>, <a href="./2023/index.html">
+            2023</a>, <a href="./2022/index.html">
+            2022</a>
+    </p>
+
+    <!-- Parallax feature -->
+    <script>
+        const parallaxEls = document.querySelectorAll('.parallax');
+
+        function updateParallax() {
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollY = Math.min(window.scrollY, maxScroll);
+
+            parallaxEls.forEach(el => {
+                const speed = parseFloat(el.dataset.speed) || 0.5;
+                el.style.transform = `translate3d(0, ${scrollY * speed}px, 0)`;
+            });
+            requestAnimationFrame(updateParallax);
+        }
+
+        requestAnimationFrame(updateParallax);
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-647B936PMZ"></script>

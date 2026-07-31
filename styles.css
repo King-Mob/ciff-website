@@ -1,9 +1,9 @@
 :root {
   --main-title: #000000;
   --plain-text: #000000;
-  --background: #ffffff81;
+  --background: rgba(255, 255, 255, 0.3);
   --background-strong: rgba(255, 255, 255, 0.6);
-  --ciff-blue: #283b79;
+  --ciff-blue: #0000ff;
   --grid: #bcbcbc3b;
   --left-edge: 0rem;
   --right-edge: 25rem;
@@ -13,27 +13,754 @@
 }
 
 @font-face {
-  font-family: "Karrik";
-  src: url("./Karrik-Regular.ttf");
+  font-family: "Rotunda";
+  src: url("./rotunda.otf");
+}
+
+@font-face {
+  font-family: "Bianzhidai";
+  src: url("./bianzhidai.otf");
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   margin: 0;
-  background-color: var(--background);
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Karrik";
+  color: var(--ciff-blue);
+  z-index: 0;
+}
+
+#grain {
+  position: fixed;
   width: 100%;
   height: 100%;
-  font-family: "Karrik";
-  overflow: hidden;
-  color: var(--ciff-blue);
+  z-index: -1;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.noise {
+  background: url(./noise.svg);
+  background-repeat: repeat;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
+  font-family: "Bianzhidai";
+  color: #0000ff;
+  font-weight: normal;
 }
+
+#looking-down {
+  position: absolute;
+  top: -100px;
+  right: -223px;
+  width: 746px;
+  opacity: 0.08;
+  z-index: -2;
+}
+
+#rabbit-right {
+  position: absolute;
+  top: 500px;
+  right: -195px;
+  height: 500px;
+  opacity: 0.2;
+  z-index: -2;
+}
+
+#rabbit-left {
+  position: absolute;
+  top: 800px;
+  left: -150px;
+  height: 500px;
+  opacity: 0.2;
+  z-index: -2;
+}
+
+#looking-up {
+  position: absolute;
+  top: 1300px;
+  left: -223px;
+  width: 746px;
+  opacity: 0.2;
+  z-index: -2;
+}
+
+.hand {
+  width: 100px;
+}
+
+#eye-of-ciff {
+  width: 120px;
+  margin-left: 20%;
+}
+
+#title-container {
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-bottom: 25px;
+}
+
+#title-container h1 {
+  margin: 0;
+  font-stretch: ultra-condensed; /* narrows the glyphs, if the font supports it */
+  letter-spacing: 0.2em;
+}
+
+#date-bar {
+  background: url("./noise.svg");
+  background-size: cover;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#date-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("noise.svg");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  filter: saturate(3);
+  z-index: -1;
+}
+
+#date-bar h2 {
+  color: white;
+  font-family: "Bianzhidai";
+  font-weight: normal;
+  font-size: 16px;
+  font-stretch: ultra-condensed;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+#date-bar a {
+  color: white;
+  flex: 0 0 auto;
+}
+
+#date-bar span {
+  flex: 0 0 auto;
+}
+
+#date-bar #responsive-space {
+  flex: 1 1 auto;
+  flex: 1 1 auto;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.map-trigger {
+  cursor: pointer;
+}
+
+#entry-top {
+  display: none;
+}
+
+#entry-bottom {
+  margin-bottom: 100px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: -12px;
+  right: -4px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  color: blue;
+  font-family: "Rotunda";
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.map-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.map-img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.poi {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  animation: poi-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes poi-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.6));
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.15);
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+  }
+}
+
+.modal-content {
+  background: white;
+  padding: 15px;
+}
+
+#location-modal-img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+#location-modal-caption {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(0, 82, 250, 0.6) calc(100% - 400px)
+  );
+}
+
+#main-content {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main-grain {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#is-it-you {
+  font-family: "Rotunda";
+  letter-spacing: 0.1em;
+  margin-top: 100px;
+  font-size: 40px;
+}
+
+p {
+  font-family: "Rotunda";
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+
+.fancy-word {
+  font-family: "Bianzhidai";
+}
+
+#polaroids-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+#polaroids-container img {
+  cursor: pointer;
+  height: 300px;
+}
+
+.polaroid-up {
+  margin-top: -300px;
+}
+
+#film-carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+h3 {
+  font-family: "Bianzhidai";
+  font-weight: normal;
+}
+
+#film-carousel p {
+  text-align: left;
+  color: blue;
+  font-weight: normal;
+}
+
+.nav-btn {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
+}
+
+.nav-btn:active {
+  transform: scale(0.94);
+}
+
+#backBtn {
+  margin-right: 40px;
+}
+
+#forwardBtn {
+  margin-left: 40px;
+}
+
+.track {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.card {
+  display: none;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 200px;
+  overflow: hidden;
+}
+.card.is-visible {
+  display: flex;
+}
+
+.card img {
+  /*
+   height: 70%;
+  object-fit: cover;
+  background: #ece7da;
+  */
+}
+.card a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.card a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or contain, depending on what ratio behavior you want */
+}
+
+#frame-hands {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#communion {
+  margin: 30px 0px 50px 0px;
+}
+
+#film-strip-container {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+#film-strip-container img {
+  width: 300px;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /*
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 120px,
+    black calc(100% - 120px),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 120px,
+    black calc(100% - 120px),
+    transparent
+  );*/
+}
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.entry {
+}
+
+.entry img {
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poi {
+    animation: none;
+  }
+  .entry img {
+    animation: none;
+  }
+}
+
+#ticket-left {
+  transform: translate(-100%, -40%);
+  width: 120px;
+  animation: hand-left-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes hand-left-pulse {
+  0%,
+  100% {
+    transform: translate(-100%, -40%) scale(1);
+  }
+  50% {
+    transform: translate(-100%, -40%) scale(1.1) rotate(-5deg);
+  }
+}
+
+#ticket-right {
+  transform: translate(30%, 5%);
+  width: 120px;
+  animation: hand-right-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes hand-right-pulse {
+  0%,
+  100% {
+    transform: translate(30%, 5%) scale(1);
+  }
+  50% {
+    transform: translate(30%, 5%) scale(1.1) rotate(5deg);
+  }
+}
+
+#ticket {
+  width: 80px;
+  transform: translate(-50%, 25%);
+  animation: ticket-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ticket-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, 25%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, 25%) scale(1.1) rotate(10deg);
+  }
+}
+
+.entry {
+  position: relative;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.entry a {
+  text-decoration: none;
+  color: white;
+}
+
+#links-container {
+  align-self: end;
+  margin-right: 100px;
+  margin-top: 80px;
+}
+
+#links-container a {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
+  color: white;
+}
+
+#links-container p {
+  font-family: "Bianzhidai";
+  text-align: right;
+  font-size: 16px;
+  margin: 0px;
+}
+
+#big-words {
+  overflow: hidden;
+  margin-top: 200px;
+}
+
+#big-words h1 {
+  font-size: 100px;
+  text-align: center;
+  overflow: hidden;
+}
+
+#new-horizon {
+  color: white;
+}
+
+footer {
+  position: relative;
+  overflow-y: hidden;
+  height: 350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 82, 250, 0.6),
+    rgba(0, 60, 250, 0.6)
+  );
+}
+
+#footer-grain {
+  position: absolute;
+  width: 100%;
+  inset: 0;
+  mix-blend-mode: soft-light;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+#credit {
+  align-self: start;
+  margin-left: 20px;
+  text-align: left;
+}
+
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  align-self: end;
+  margin-right: 5%;
+  margin-bottom: 25px;
+}
+
+#footer-container h1 {
+  margin: 0;
+  text-align: right;
+  font-stretch: ultra-condensed; /* narrows the glyphs, if the font supports it */
+  letter-spacing: 0.2em;
+  margin-bottom: 5%;
+}
+
+#eye-of-ciff-bottom {
+  width: 120px;
+  margin-left: 40%;
+}
+
+/* Mobile styles */
+
+@media screen and (max-width: 700px) {
+  #title-container h1 {
+    font-size: 20px;
+  }
+
+  #big-words {
+    margin-top: 20px;
+  }
+
+  #big-words h1 {
+    font-size: 40px;
+  }
+
+  #eye-of-ciff {
+    margin-left: 0%;
+  }
+
+  #date-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #date-bar span,
+  #date-bar a {
+    display: none;
+  }
+
+  #date-bar h2 {
+    text-align: center;
+    float: none;
+  }
+
+  #entry-top {
+    display: block;
+  }
+
+  #entry-bottom {
+    display: none;
+  }
+
+  #looking-down {
+    top: -88px;
+    right: -114px;
+    width: 370px;
+  }
+
+  #rabbit-right {
+    display: none;
+  }
+
+  #rabbit-left {
+    display: none;
+  }
+
+  #looking-up {
+    width: 340px;
+    left: -100px;
+    top: 1500px;
+  }
+
+  p {
+    max-width: 250px;
+  }
+
+  #polaroids-container img {
+    max-height: 200px;
+  }
+
+  .polaroid-up {
+    margin-top: -200px;
+  }
+
+  #film-carousel button {
+    display: none;
+  }
+
+  .track {
+    padding: 0px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+    scroll-snap-type: x proximity; /* optional, nice snap-to-card feel */
+    justify-content: start;
+  }
+
+  /* Show every card, not just .is-visible ones */
+  .card,
+  .card.is-visible {
+    display: flex !important;
+    flex: 0 0 85%; /* or whatever width feels right per card on mobile */
+    scroll-snap-align: start; /* optional, pairs with scroll-snap-type above */
+    max-width: 150px;
+  }
+
+  #links-container {
+    align-self: center;
+    margin-right: 0px;
+  }
+
+  #links-container p {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  footer {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    height: 400px;
+  }
+
+  #credit {
+    text-align: right;
+    align-self: end;
+    margin-right: 20px;
+    color: white;
+    font-size: 14px;
+  }
+
+  #credit a {
+    color: white;
+  }
+
+  #footer-container {
+    flex-direction: column-reverse;
+  }
+
+  #footer-container h1 {
+    color: white;
+    font-size: 20px;
+  }
+
+  #eye-of-ciff-bottom {
+    filter: saturate(0) invert(1);
+  }
+}
+
+/* old styles  */
 
 #slogan {
   text-align: center;
@@ -58,8 +785,8 @@ h1 {
 
 button {
   background: none;
+  border: none;
   cursor: pointer;
-  border: 2px var(--ciff-blue) solid;
   font-family: Karrik;
   font-size: 20px;
   margin: 5px;
@@ -161,4 +888,63 @@ h3 {
 #previous {
   font-size: 15px;
   margin-bottom: 10px;
+}
+
+/* Style for the drawing canvas */
+
+/* ---------- Drawing canvas section ---------- */
+
+.draw-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.draw-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.draw-toolbar input[type="color"] {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.canvas-wrap {
+  width: 100%;
+  height: 300px;
+  aspect-ratio: 1 / 1;
+  max-width: 480px;
+  border: 4px solid var(--ciff-blue);
+  overflow: hidden;
+  touch-action: none; /* prevent scrolling while drawing on touch devices */
+}
+
+#drawCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.result-box {
+  width: 100%;
+  max-width: 480px;
+  padding: 16px;
+  background: #f0f4ff;
+  border: 1px solid #d0dcff;
+  font-size: 15px;
+  line-height: 1.5;
 }
