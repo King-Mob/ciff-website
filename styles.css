@@ -173,14 +173,6 @@ h1 {
   cursor: pointer;
 }
 
-#entry-top {
-  display: none;
-}
-
-#entry-bottom {
-  margin-bottom: 100px;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -458,6 +450,7 @@ h3 {
 }
 
 .entry {
+  height: 120px;
 }
 
 .entry img {
