@@ -72,6 +72,7 @@ button {
   font-family: Ronzino;
   font-size: 20px;
   margin: 5px;
+  width: 200px;
   color: var(--ciff-blue);
 }
 
@@ -82,14 +83,6 @@ button:hover {
 
 a {
   color: var(--ciff-blue);
-}
-
-#button-container {
-  display: flex;
-  margin-left: -21px;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
 .sib-form-flex {

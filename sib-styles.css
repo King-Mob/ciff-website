@@ -2015,7 +2015,6 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 }
 .sib-form-block__button {
   display: inline-block;
-  padding: 8px 18px;
   border: none;
   overflow-wrap: break-word;
   max-width: 100%;
@@ -2023,10 +2022,6 @@ http://nicolasgallagher.com/micro-clearfix-hack/
 }
 .sib-form-block__button-disabled {
   opacity: 0.5;
-}
-.sib-form-block__button-with-loader {
-  min-height: 40px;
-  line-height: 23px;
 }
 .sib-image-form-block {
   padding: 2px;
