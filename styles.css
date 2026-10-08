@@ -13,8 +13,8 @@
 }
 
 @font-face {
-  font-family: "Karrik";
-  src: url("./Karrik-Regular.ttf");
+  font-family: "Ronzino";
+  src: url("./Ronzino-MediumOblique.otf");
 }
 
 body {
@@ -26,7 +26,7 @@ body {
   background-color: var(--background);
   width: 100%;
   height: 100%;
-  font-family: "Karrik";
+  font-family: "Ronzino";
   overflow: hidden;
   color: var(--ciff-blue);
 }
@@ -69,7 +69,7 @@ button {
   background: none;
   cursor: pointer;
   border: 2px var(--ciff-blue) solid;
-  font-family: Karrik;
+  font-family: Ronzino;
   font-size: 20px;
   margin: 5px;
   color: var(--ciff-blue);
