@@ -2217,9 +2217,6 @@ textarea.input {
   left: 49%;
 }
 @media screen and (max-width: 500px) {
-  #sib-container {
-    padding: 32px 9px 32px;
-  }
   .form__label-row--horizontal {
     flex-direction: column;
   }
@@ -2309,11 +2306,7 @@ textarea.input {
     transform: scale(1.5);
   }
 }
-@media screen and (max-width: 400px) {
-  #sib-container {
-    padding: 32px 0px 32px;
-  }
-}
+
 @media screen and (max-width: 480px) {
   .sib-image-form-block img {
     height: auto !important;

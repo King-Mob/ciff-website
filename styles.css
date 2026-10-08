@@ -38,6 +38,7 @@ h1 {
 #slogan {
   text-align: center;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
 #container {
@@ -63,6 +64,11 @@ h1 {
 
 #title {
   margin-bottom: 250px;
+}
+
+#submit-button {
+  width: 238px;
+  font-size: 23.8px;
 }
 
 button {
