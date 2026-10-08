@@ -46,9 +46,10 @@ h1 {
   align-items: center;
   box-shadow: var(--ciff-blue) 15px 15px;
   backdrop-filter: blur(3px);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.95);
   max-width: 600px;
-  width: 90%;
+  width: 80%;
+  padding: 0px 10px;
   z-index: 1;
   justify-content: space-between;
   overflow-y: auto;
@@ -56,8 +57,7 @@ h1 {
 
 @media screen and (max-width: 700px) {
   #container {
-    width: 100%;
-    box-shadow: none;
+    height: 90%;
   }
 }
 
@@ -73,6 +73,11 @@ button {
   font-size: 20px;
   margin: 5px;
   color: var(--ciff-blue);
+}
+
+button:hover {
+  background-color: var(--ciff-blue);
+  color: white;
 }
 
 a {
